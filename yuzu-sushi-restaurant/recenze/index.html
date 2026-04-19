@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recenze hostů · Yuzu Sushi Restaurant</title>
+<meta name="description" content="Co si myslí hosté o Yuzu Sushi v Čelákovicích. Recenze z Googlu, Facebooku a TripAdvisoru.">
+<link rel="icon" href="../photos/sushi-deco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Sedgwick+Ave+Display&family=Shippori+Mincho:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --y:#f5c518;--y-light:#ffd84d;
+  --bg:#0a0a0a;--bg-2:#141414;--bg-3:#1c1c1c;
+  --line:rgba(245,197,24,.2);--line-2:rgba(255,255,255,.08);
+  --muted:rgba(255,255,255,.58);--muted-2:rgba(255,255,255,.38);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  background:var(--bg);color:#fff;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1200px 800px at 15% 10%,rgba(245,197,24,.06),transparent 60%),
+    radial-gradient(1000px 700px at 90% 90%,rgba(245,197,24,.05),transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:.35;mix-blend-mode:overlay;
+}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--y)}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--y)}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.02em}
+
+/* NAV */
+#nav{
+  position:sticky;top:0;z-index:900;padding:1rem 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,10,10,.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.logo{display:flex;align-items:center;gap:.7rem;color:#fff;font-family:'Montserrat',sans-serif}
+.logo__mark{width:40px;height:40px;border-radius:50%;background:var(--y);position:relative;box-shadow:0 0 0 2px #000,0 0 0 3px var(--y)}
+.logo__mark::before,.logo__mark::after{content:'';position:absolute;left:-5px;top:50%;width:48px;height:2px;background:#fff;transform:translateY(-50%) rotate(-28deg)}
+.logo__mark::after{transform:translateY(-50%) rotate(28deg)}
+.logo__text{line-height:.95;letter-spacing:.12em;font-size:.7rem;font-weight:700}
+.logo__text b{color:var(--y);font-size:.9rem;letter-spacing:.18em;display:block}
+.nav-back{padding:.6rem 1.2rem;border:1px solid var(--line-2);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;transition:all .25s}
+.nav-back:hover{border-color:var(--y);color:var(--y)}
+
+/* HEADER */
+header.page{
+  position:relative;z-index:1;padding:6rem 6% 3rem;text-align:center;
+  border-bottom:1px solid var(--line);
+}
+header.page::after{
+  content:'"';position:absolute;top:3rem;left:50%;transform:translateX(-50%);
+  font-family:'Shippori Mincho',serif;font-size:18rem;line-height:1;
+  color:rgba(245,197,24,.08);font-weight:800;pointer-events:none;z-index:-1;
+}
+header.page h1{font-size:clamp(2.5rem,5vw,4.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1;margin:1rem 0 .6rem}
+header.page h1 .y{color:var(--y)}
+header.page h1 .script{font-family:'Sedgwick Ave Display',cursive;font-weight:400;color:#fff;font-size:.55em;display:inline-block;margin-left:.3rem;text-transform:none;letter-spacing:0}
+header.page .sub{color:var(--muted);max-width:620px;margin:1rem auto;font-size:1rem;line-height:1.75}
+
+.summary{
+  display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;
+  margin:2.5rem auto 1.5rem;max-width:700px;
+  padding:1.8rem 2rem;background:var(--bg-2);border:1px solid var(--line);
+}
+.summary__big{display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.summary__big b{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3.5rem;color:var(--y);line-height:1}
+.summary__big span{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-2)}
+.summary__stars{color:var(--y);font-size:1.4rem;letter-spacing:4px}
+.summary__count{font-size:.9rem;color:var(--muted)}
+.summary__count strong{color:#fff}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;transition:all .25s}
+.btn--y{background:var(--y);color:#000}
+.btn--y:hover{background:var(--y-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,197,24,.3)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn--ghost:hover{border-color:var(--y);color:var(--y)}
+
+/* FILTER */
+.filter-bar{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;padding:2rem 5% 0;position:relative;z-index:1}
+.filter-btn{padding:.55rem 1.1rem;background:transparent;border:1px solid var(--line-2);color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.filter-btn:hover{color:#fff;border-color:var(--line)}
+.filter-btn.active{background:var(--y);color:#000;border-color:var(--y)}
+
+/* GRID */
+.reviews{
+  position:relative;z-index:1;
+  max-width:1300px;margin:0 auto;padding:3rem 5% 5rem;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+}
+.rev{
+  background:var(--bg-2);border:1px solid var(--line-2);
+  padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1rem;
+  transition:border-color .3s,transform .3s var(--ease);
+  break-inside:avoid;
+}
+.rev:hover{border-color:var(--line);transform:translateY(-3px)}
+.rev__top{display:flex;justify-content:space-between;align-items:center}
+.rev__stars{color:var(--y);letter-spacing:3px;font-size:.95rem}
+.rev__source{
+  display:inline-flex;align-items:center;gap:.35rem;
+  padding:.2rem .55rem;background:var(--bg-3);
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:.6rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--y);
+  border:1px solid var(--line);
+}
+.rev__quote{font-family:'Shippori Mincho',serif;font-size:1rem;line-height:1.7;color:#fff;font-style:italic;flex:1}
+.rev__quote::before{content:'„';color:var(--y);font-size:1.4rem;font-weight:700;margin-right:.1rem}
+.rev__quote::after{content:'"';color:var(--y);font-size:1.4rem;font-weight:700}
+.rev__meta{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid var(--line-2)}
+.rev__author{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--y)}
+.rev__date{font-size:.7rem;color:var(--muted-2)}
+.rev[data-rating="4"] .rev__stars{opacity:.85}
+.rev[data-rating="3"] .rev__stars{opacity:.7}
+.rev.hidden{display:none}
+
+/* CTA band */
+.cta-band{
+  background:var(--y);color:#000;padding:4rem 5%;text-align:center;
+  margin-top:2rem;
+}
+.cta-band h3{font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.7rem}
+.cta-band p{max-width:540px;margin:0 auto 1.4rem;color:#1a1a1a;line-height:1.7}
+.cta-band .btn--dark{background:#000;color:var(--y)}
+
+/* FOOTER */
+footer{background:var(--bg);padding:3rem 6% 2rem;border-top:1px solid var(--line);text-align:center}
+footer p{font-size:.75rem;color:var(--muted-2)}
+footer a{color:var(--y)}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .reviews{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  .reviews{grid-template-columns:1fr;padding:2rem 5% 3rem}
+  header.page{padding:4rem 5% 2rem}
+  .summary{gap:1.2rem;padding:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../" class="logo" aria-label="Yuzu Sushi – domů">
+    <span class="logo__mark"></span>
+    <span class="logo__text">YUZU <b>SUSHI</b></span>
+  </a>
+  <a href="../" class="nav-back">← Zpět na web</a>
+</nav>
+
+<!-- HEADER -->
+<header class="page">
+  <span class="eyebrow" style="justify-content:center">Hosté říkají</span>
+  <h1>Recenze <span class="y">hostů</span> <span class="script">Yuzu Sushi</span></h1>
+  <p class="sub">Co si myslí lidé, kteří u nás jedli – přesné citace z Google, Facebooku a dalších platforem.</p>
+
+  <div class="summary">
+    <div class="summary__big">
+      <b>4.7</b>
+      <span>z 5 hvězd</span>
+    </div>
+    <div>
+      <div class="summary__stars">★★★★★</div>
+      <div class="summary__count" style="margin-top:.5rem">Průměr z <strong>19 recenzí</strong> · Google &amp; Facebook</div>
+      <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center">
+        <a href="https://www.google.com/maps/place/Yuzu+Fresh+Bar/@50.1860689,14.6535322,16z" target="_blank" class="btn btn--y">Ohodnotit na Googlu →</a>
+        <a href="../#contact" class="btn btn--ghost">Rezervovat stůl</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER -->
+<div class="filter-bar" id="filter-bar">
+  <button class="filter-btn active" data-filter="all">Všechny (19)</button>
+  <button class="filter-btn" data-filter="5">5 hvězd</button>
+  <button class="filter-btn" data-filter="food">O jídle</button>
+  <button class="filter-btn" data-filter="service">Obsluha</button>
+  <button class="filter-btn" data-filter="family">Rodiny s dětmi</button>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews" id="reviews">
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Losos naprosto dokonalý a bylo vidět, že i čerstvý! Dokonce i nakládaný zázvor byl tady top!</p>
+    <div class="rev__meta"><span class="rev__author">Kataka Janíková</span><span class="rev__date">5. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Nejlepší sushi co jsem kdy měla. Krásný prostředí, milá obsluha.</p>
+    <div class="rev__meta"><span class="rev__author">Pavla Malá</span><span class="rev__date">2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service family">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Skvělé jídlo i obsluha, oceňuji velké pískoviště pro děti, určitě stojí za to se vrátit.</p>
+    <div class="rev__meta"><span class="rev__author">Ivuška Navrátilová</span><span class="rev__date">10. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Dnes jsme zkusili poprvé a musím říci že to nebylo vůbec špatné! Krevety v tempuře super.</p>
+    <div class="rev__meta"><span class="rev__author">Andrea Poděbradská</span><span class="rev__date">9. 3. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Velmi dobré a především čerstvé jídlo. Přátelský, příjemný a pohodlný personál.</p>
+    <div class="rev__meta"><span class="rev__author">Michael Schützelhofer</span><span class="rev__date">9. 3. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Niet co dodať, prosto super.</p>
+    <div class="rev__meta"><span class="rev__author">Matúš „Rebel" Drdo</span><span class="rev__date">6. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food family">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Skvělé jídlo, příjemná obsluha i prostředí. Jako rodič oceňuji vyžití pro děti venku.</p>
+    <div class="rev__meta"><span class="rev__author">Lucie Pávková</span><span class="rev__date">5. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Nabídne jídlo, za kterým se budu vždy ráda vracet. Dávám pět hvězdiček z pěti.</p>
+    <div class="rev__meta"><span class="rev__author">Julie Spieszová</span><span class="rev__date">5. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Krásné klidné prostředí se skvělým jídlem, určitě jsme nebyli naposledy.</p>
+    <div class="rev__meta"><span class="rev__author">Léňa Dömeová</span><span class="rev__date">5. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Opravdu jsme si pochutnali, ještě si vzali domů na večer, přijdeme zas.</p>
+    <div class="rev__meta"><span class="rev__author">Lenka Jirková</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Príjemné prostredie, skvelé jedlo, obsluha taktiež!</p>
+    <div class="rev__meta"><span class="rev__author">Aďka Žabka Kollárča</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Jídlo famózní, obsluha milá a příjemná, třeba zkusit.</p>
+    <div class="rev__meta"><span class="rev__author">Gabrie Llita</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Krásný interiér, skvělá kuchyně – kuchaři a obsluha.</p>
+    <div class="rev__meta"><span class="rev__author">Zuzana Šingelová</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Příjemné prostředí, hodně kvalitní a chutná kuchyně!</p>
+    <div class="rev__meta"><span class="rev__author">Michal von Kufenberg</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Skvělá obsluha, výborné jídlo, všem doporučuji.</p>
+    <div class="rev__meta"><span class="rev__author">Marek Šťastný</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Skvělé sushi, milá obsluha. Není o čem! Odporučuji každému!</p>
+    <div class="rev__meta"><span class="rev__author">Ivanko Gažo</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Takhle dlouho jsem si nepochutnal. Za mě 5 hvězd.</p>
+    <div class="rev__meta"><span class="rev__author">Marek Fára</span><span class="rev__date">2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="5" data-tags="food service">
+    <div class="rev__top"><div class="rev__stars">★★★★★</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Velmi pěkná restaurace, příjemná obsluha, skvělé jídlo. Všechno bylo výborné.</p>
+    <div class="rev__meta"><span class="rev__author">Janka Nohavičková</span><span class="rev__date">2019</span></div>
+  </div>
+
+  <div class="rev" data-rating="3" data-tags="food">
+    <div class="rev__top"><div class="rev__stars">★★★☆☆</div><span class="rev__source">Google</span></div>
+    <p class="rev__quote">Hovězí maso bylo tuhé, skončil jsem konzumací nudlí. Mrzí mě to, jinak vypadá restaurace krásně.</p>
+    <div class="rev__meta"><span class="rev__author">Max Pavlov</span><span class="rev__date">4. 6. 2019</span></div>
+  </div>
+
+</div>
+
+<!-- CTA band -->
+<div class="cta-band">
+  <h3>Jedli jste u nás? Napište recenzi</h3>
+  <p>Váš názor nás posouvá dál – a pomůže ostatním se rozhodnout. Děkujeme!</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://www.google.com/maps/place/Yuzu+Fresh+Bar/@50.1860689,14.6535322,16z" target="_blank" class="btn btn--dark">★ Ohodnotit na Googlu</a>
+    <a href="https://www.facebook.com/YuzuSushiRestaurant/" target="_blank" class="btn btn--dark">f Napsat na Facebooku</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Yuzu Sushi Restaurant · V Prokopě 1551, Čelákovice 250 88 · <a href="../">zpět na web</a> · Web od <a href="https://strankyprovas.cz" target="_blank">StránkyProVás</a></p>
+</footer>
+
+<script>
+// Filter
+const filterBar=document.getElementById('filter-bar');
+const revs=document.querySelectorAll('.rev');
+filterBar.addEventListener('click',e=>{
+  const b=e.target.closest('.filter-btn');if(!b)return;
+  filterBar.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const f=b.dataset.filter;
+  revs.forEach(r=>{
+    if(f==='all'){r.classList.remove('hidden');return}
+    if(f==='5'){r.classList.toggle('hidden',r.dataset.rating!=='5');return}
+    const tags=(r.dataset.tags||'').split(' ');
+    r.classList.toggle('hidden',!tags.includes(f));
+  });
+});
+</script>
+</body>
+</html>

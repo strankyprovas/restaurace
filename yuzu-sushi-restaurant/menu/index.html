@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jídelní a nápojový lístek · Yuzu Sushi Restaurant</title>
+<meta name="description" content="Kompletní jídelní lístek Yuzu Sushi v Čelákovicích. Sushi, sashimi, nigiri, hosomaki, uramaki, udon, thajské kari, steaky, sety a dezerty.">
+<link rel="icon" href="../photos/sushi-deco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Sedgwick+Ave+Display&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+
+:root{
+  --y:#f5c518;--y-light:#ffd84d;--y-dark:#d4a813;
+  --bg:#0a0a0a;--bg-2:#141414;--bg-3:#1c1c1c;
+  --line:rgba(245,197,24,.2);--line-2:rgba(255,255,255,.08);
+  --muted:rgba(255,255,255,.58);--muted-2:rgba(255,255,255,.38);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  background:var(--bg);color:#fff;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1200px 800px at 15% 10%,rgba(245,197,24,.06),transparent 60%),
+    radial-gradient(1000px 700px at 90% 90%,rgba(245,197,24,.05),transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:.35;mix-blend-mode:overlay;
+}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--y)}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--y)}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.02em}
+
+/* NAV — identický top bar */
+#nav{
+  position:sticky;top:0;z-index:900;
+  padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,10,10,.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.logo{display:flex;align-items:center;gap:.7rem;color:#fff;font-family:'Montserrat',sans-serif}
+.logo__mark{width:40px;height:40px;border-radius:50%;background:var(--y);position:relative;box-shadow:0 0 0 2px #000, 0 0 0 3px var(--y)}
+.logo__mark::before,.logo__mark::after{content:'';position:absolute;left:-5px;top:50%;width:48px;height:2px;background:#fff;transform:translateY(-50%) rotate(-28deg)}
+.logo__mark::after{transform:translateY(-50%) rotate(28deg)}
+.logo__text{line-height:.95;letter-spacing:.12em;font-size:.7rem;font-weight:700}
+.logo__text b{color:var(--y);font-size:.9rem;letter-spacing:.18em;display:block}
+.nav-back{
+  padding:.6rem 1.2rem;border:1px solid var(--line-2);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;
+  letter-spacing:.18em;text-transform:uppercase;transition:all .25s;
+}
+.nav-back:hover{border-color:var(--y);color:var(--y)}
+
+/* HEADER */
+header.page{
+  position:relative;z-index:1;padding:5rem 6% 3rem;text-align:center;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(ellipse at center,rgba(245,197,24,.08),transparent 70%),
+    url('../photos/hero-maki.jpg') center/cover;
+  background-blend-mode:overlay;
+}
+header.page::before{
+  content:'';position:absolute;inset:0;background:rgba(10,10,10,.85);z-index:-1;
+}
+header.page h1{font-size:clamp(2.5rem,5vw,4.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1;margin:1rem 0 .6rem}
+header.page h1 .y{color:var(--y)}
+header.page .script{font-family:'Sedgwick Ave Display',cursive;font-weight:400;color:#fff;font-size:.55em;display:inline-block;margin-left:.3rem;text-transform:none;letter-spacing:0}
+header.page p{color:var(--muted);max-width:620px;margin:1rem auto;font-size:1rem;line-height:1.75}
+
+.download-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.8rem;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;
+  transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s;
+}
+.btn--y{background:var(--y);color:#000}
+.btn--y:hover{background:var(--y-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,197,24,.3)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28)}
+.btn--ghost:hover{border-color:var(--y);color:var(--y)}
+
+/* ANCHORS SIDEBAR */
+.wrap{position:relative;z-index:1;display:grid;grid-template-columns:240px 1fr;gap:3rem;padding:4rem 6%;max-width:1400px;margin:0 auto}
+aside.anchors{position:sticky;top:80px;align-self:start;max-height:calc(100vh - 100px);overflow-y:auto;padding-right:.5rem}
+aside.anchors h4{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--y);margin-bottom:1rem}
+aside.anchors ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+aside.anchors a{
+  display:block;padding:.45rem .8rem;font-size:.8rem;
+  color:var(--muted);border-left:2px solid transparent;transition:all .2s;
+}
+aside.anchors a:hover,aside.anchors a.active{color:#fff;border-left-color:var(--y);background:rgba(245,197,24,.05)}
+
+/* SECTIONS */
+.cat{scroll-margin-top:80px;margin-bottom:5rem}
+.cat__head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.cat__head h2{font-size:clamp(1.6rem,3vw,2.6rem);text-transform:uppercase;letter-spacing:.04em}
+.cat__head h2 small{color:var(--muted-2);font-size:.5em;font-weight:500;letter-spacing:.2em;display:block;margin-top:.3rem}
+.cat__icon{color:var(--y);font-size:2rem}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line-2)}
+.it{
+  display:flex;flex-direction:column;gap:.4rem;padding:1.4rem 1.6rem;
+  border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+  position:relative;transition:background .25s;
+}
+.it:nth-child(2n){border-right:none}
+.it:hover{background:rgba(245,197,24,.04)}
+.it.star{background:rgba(245,197,24,.08)}
+.it.star::before{content:'★';position:absolute;top:.8rem;right:.9rem;color:var(--y);font-size:.85rem}
+.it__row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.it__row h3{font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800}
+.it__row .price{font-weight:700;font-size:.98rem;color:var(--y);white-space:nowrap}
+.it p{font-size:.82rem;color:var(--muted);line-height:1.55}
+.it__tag{display:inline-block;margin-top:.4rem;padding:.15rem .55rem;background:rgba(245,197,24,.12);color:var(--y);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+
+.note{text-align:center;font-size:.85rem;color:var(--muted-2);padding:1.5rem;background:var(--bg-2);border:1px solid var(--line-2);margin-top:1rem}
+.note strong{color:#fff}
+
+/* CTA bottom */
+.cta-band{
+  margin-top:3rem;padding:3rem 2rem;text-align:center;
+  background:var(--y);color:#000;
+}
+.cta-band h3{font-size:clamp(1.4rem,2.4vw,2rem);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.8rem}
+.cta-band p{max-width:520px;margin:0 auto 1.4rem;color:#1a1a1a}
+.cta-band .btn--dark{background:#000;color:var(--y)}
+.cta-band .btn--dark:hover{background:#1a1a1a}
+
+/* FOOTER */
+footer{background:var(--bg);padding:3rem 6% 2rem;border-top:1px solid var(--line);text-align:center}
+footer p{font-size:.75rem;color:var(--muted-2)}
+footer a{color:var(--y)}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;padding:2.5rem 5%}
+  aside.anchors{position:static;max-height:none;padding:0 0 2rem}
+  aside.anchors ul{flex-direction:row;flex-wrap:wrap;gap:.3rem}
+  aside.anchors a{padding:.35rem .7rem;font-size:.72rem;border-left:none;border:1px solid var(--line-2)}
+  .items{grid-template-columns:1fr}
+  .it{border-right:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../" class="logo" aria-label="Yuzu Sushi – domů">
+    <span class="logo__mark"></span>
+    <span class="logo__text">YUZU <b>SUSHI</b></span>
+  </a>
+  <a href="../" class="nav-back">← Zpět na web</a>
+</nav>
+
+<!-- HEADER -->
+<header class="page">
+  <span class="eyebrow" style="justify-content:center">Jídelní a nápojový lístek</span>
+  <h1>Kompletní <span class="y">menu</span> <span class="script">Yuzu Sushi</span></h1>
+  <p>Všechny naše speciality přehledně na jedné stránce. Ceny v Kč, včetně DPH. Informace o alergenech vám ráda poskytne obsluha.</p>
+  <div class="download-row">
+    <a href="../yuzu-menu.pdf" class="btn btn--y" download>Stáhnout kompletní PDF ↓</a>
+    <a href="../#contact" class="btn btn--ghost">Rezervovat stůl</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- SIDEBAR ANCHORS -->
+<aside class="anchors">
+  <h4>Kategorie</h4>
+  <ul>
+    <li><a href="#predkrmy">Předkrmy</a></li>
+    <li><a href="#polevky">Polévky</a></li>
+    <li><a href="#nigiri">Nigiri · Onigirazu</a></li>
+    <li><a href="#hosomaki">Hosomaki</a></li>
+    <li><a href="#uramaki">Uramaki Special</a></li>
+    <li><a href="#crunchy">Crunchy Roll & Fusion</a></li>
+    <li><a href="#futomaki">Futomaki</a></li>
+    <li><a href="#sashimi">Sashimi</a></li>
+    <li><a href="#bowls">Sushi Bowls</a></li>
+    <li><a href="#udon">Udon</a></li>
+    <li><a href="#kari">Thajské speciality &amp; Kari</a></li>
+    <li><a href="#steaky">Steaky na grilu</a></li>
+    <li><a href="#ryze">Smažená rýže</a></li>
+    <li><a href="#prilohy">Přílohy &amp; omáčky</a></li>
+    <li><a href="#sety">Yuzu Sety</a></li>
+    <li><a href="#dezerty">Dezerty</a></li>
+  </ul>
+</aside>
+
+<!-- MAIN MENU -->
+<main>
+
+<!-- PŘEDKRMY -->
+<section class="cat" id="predkrmy">
+  <div class="cat__head"><h2>Předkrmy <small>Appetizers</small></h2><div class="cat__icon">🥢</div></div>
+  <div class="items">
+    <div class="it star"><div class="it__row"><h3>Yuzu Beef</h3><span class="price">165,-</span></div><p>Křupavé hovězí nudličky obalené v tempuře s naší sladko pálivou omáčkou a zeleninou Julienne.</p><span class="it__tag">Signature</span></div>
+    <div class="it"><div class="it__row"><h3>Tartar losos / tuňák</h3><span class="price">195 / 235,-</span></div><p>Losos nebo tuňák, avokádo, kopr, japonská majonéza, yuzu omáčka, kaviár, pikantní omáčka, opečený toust.</p></div>
+    <div class="it"><div class="it__row"><h3>Ebi Tempura</h3><span class="price">190,-</span></div><p>5 ks smažených tygřích krevet 26/30 v panko strouhance, se zeleninou Julienne.</p></div>
+    <div class="it"><div class="it__row"><h3>Gyóza taštičky kuřecí</h3><span class="price">165,-</span></div><p>Kuřecí maso s naší jemně pikantní omáčkou a zeleninou Julienne (4 ks).</p></div>
+    <div class="it"><div class="it__row"><h3>Gyóza taštičky vepřové</h3><span class="price">175,-</span></div><p>Vepřové maso s naší jemně pikantní omáčkou a zeleninou Julienne (4 ks).</p></div>
+    <div class="it"><div class="it__row"><h3>Wakame salát</h3><span class="price">125,-</span></div><p>Mořské řasy, sezam, osinko.</p></div>
+    <div class="it"><div class="it__row"><h3>Edamame</h3><span class="price">115,-</span></div><p>Lehce osolené sójové boby – ideální předkrm k saké nebo pivu.</p></div>
+    <div class="it"><div class="it__row"><h3>Kimchi salát</h3><span class="price">125,-</span></div><p>Fermentovaný, probiotický, pikantní salát z nakládané a fermentované zeleniny.</p></div>
+    <div class="it"><div class="it__row"><h3>Grilované kousky tuňáka</h3><span class="price">225,-</span></div><p>V sezamové krustě s mangovo-rajčatovým salátkem.</p></div>
+    <div class="it"><div class="it__row"><h3>Tataki Salmon</h3><span class="price">215,-</span></div><p>Grilovaný losos, mangovo-rajčatový salátek, koriandr, červená cibule, avokádo, ponzu omáčka.</p></div>
+    <div class="it star"><div class="it__row"><h3>Yuzu Chicken</h3><span class="price">155,-</span></div><p>Křupavé kuřecí nudličky obalené v tempuře s naší sladko pálivou omáčkou, se zeleninou Julienne.</p><span class="it__tag">Oblíbené</span></div>
+    <div class="it"><div class="it__row"><h3>Edamaki 5 ks</h3><span class="price">165,-</span></div><p>Smažené závitky plněné nudlemi, hráškem edamame, zeleninou, chilli, wasabi majonéza.</p></div>
+  </div>
+</section>
+
+<!-- POLÉVKY -->
+<section class="cat" id="polevky">
+  <div class="cat__head"><h2>Polévky <small>Soups</small></h2><div class="cat__icon">🍜</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Pho Bo hovězí</h3><span class="price">180,-</span></div><p>Tradiční vietnamská polévka – silný hovězí vývar, hovězí maso, zelenina, rýžové nudle, bylinky.</p></div>
+    <div class="it"><div class="it__row"><h3>Pho Gai kuřecí</h3><span class="price">170,-</span></div><p>Tradiční vietnamská polévka – silný kuřecí vývar, kuřecí maso, zelenina, rýžové nudle, bylinky.</p></div>
+    <div class="it star"><div class="it__row"><h3>Tom Yum Goong</h3><span class="price">129,-</span></div><p>Pikantní tradiční thajská polévka s krevetami, rajčaty, nudlemi, koriandrem, mrkví, lilkem a cuketou.</p><span class="it__tag">Klasika</span></div>
+    <div class="it"><div class="it__row"><h3>Tomkha Kai</h3><span class="price">119,-</span></div><p>Krémová polévka s kokosovým mlékem, koriandrem, lilkem, cuketou, kuřecím masem, hlívou ústřičnou.</p></div>
+    <div class="it"><div class="it__row"><h3>Miso</h3><span class="price">109,-</span></div><p>Polévka s mořskou řasou wakame, tofu, jarní cibulkou, sezamem, shiitake a edamame.</p></div>
+  </div>
+</section>
+
+<!-- NIGIRI -->
+<section class="cat" id="nigiri">
+  <div class="cat__head"><h2>Nigiri &amp; Onigirazu <small>Nigiri 1 ks · Onigirazu · japonský rýžový sandwich</small></h2><div class="cat__icon">🍣</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Sake</h3><span class="price">75,-</span></div><p>Losos · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Maguro</h3><span class="price">80,-</span></div><p>Tuňák · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Ebi</h3><span class="price">70,-</span></div><p>Kreveta · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Hotategai</h3><span class="price">95,-</span></div><p>Mušle Svatého Jakuba · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Unagi</h3><span class="price">75,-</span></div><p>Úhoř marinovaný v unagi omáčce · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Avokádo</h3><span class="price">65,-</span></div><p>Čerstvé avokádo · 1 ks</p></div>
+    <div class="it star"><div class="it__row"><h3>Foie Gras Tobiko</h3><span class="price">155,-</span></div><p>Husí játra foie gras, yuzu omáčka, kaviár · 1 ks</p><span class="it__tag">Luxus</span></div>
+    <div class="it"><div class="it__row"><h3>Ikarimi</h3><span class="price">65,-</span></div><p>Uzený losos · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Jalapeños</h3><span class="price">60,-</span></div><p>Pálivá papričky · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Asapura</h3><span class="price">60,-</span></div><p>Chřest · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Shiitake</h3><span class="price">60,-</span></div><p>Japonská houba · 1 ks</p></div>
+    <div class="it"><div class="it__row"><h3>Onigirazu Losos</h3><span class="price">185,-</span></div><p>Japonský rýžový sandwich s lososem.</p></div>
+    <div class="it"><div class="it__row"><h3>Onigirazu Tuňák</h3><span class="price">195,-</span></div><p>Japonský rýžový sandwich s tuňákem.</p></div>
+    <div class="it"><div class="it__row"><h3>Onigirazu Vepřový bůček</h3><span class="price">175,-</span></div><p>Japonský rýžový sandwich s vepřovým bůčkem.</p></div>
+  </div>
+</section>
+
+<!-- HOSOMAKI -->
+<section class="cat" id="hosomaki">
+  <div class="cat__head"><h2>Hosomaki <small>Klasické sushi rolky · 6 ks</small></h2><div class="cat__icon">🥢</div></div>
+  <div class="items">
+    <div class="it star"><div class="it__row"><h3>Yuzu Special</h3><span class="price">125,-</span></div><p>Homemade tuňáková pasta s yuzu-ponzu omáčkou.</p><span class="it__tag">Signature</span></div>
+    <div class="it"><div class="it__row"><h3>Sake</h3><span class="price">125,-</span></div><p>Čerstvý losos.</p></div>
+    <div class="it"><div class="it__row"><h3>Tekka</h3><span class="price">140,-</span></div><p>Tuňák.</p></div>
+    <div class="it"><div class="it__row"><h3>Avokádo</h3><span class="price">105,-</span></div><p>Čerstvé avokádo.</p></div>
+    <div class="it star"><div class="it__row"><h3>Foie Gras Tobiko</h3><span class="price">199,-</span></div><p>Husí játra, yuzu omáčka, kaviár.</p></div>
+    <div class="it"><div class="it__row"><h3>Kappa</h3><span class="price">95,-</span></div><p>Okurka.</p></div>
+    <div class="it"><div class="it__row"><h3>Osinko</h3><span class="price">90,-</span></div><p>Nakládaná ředkev.</p></div>
+    <div class="it"><div class="it__row"><h3>Shiitake</h3><span class="price">90,-</span></div><p>Japonská houba.</p></div>
+    <div class="it"><div class="it__row"><h3>Kani</h3><span class="price">95,-</span></div><p>Krabí tyčinka.</p></div>
+    <div class="it"><div class="it__row"><h3>Ebi</h3><span class="price">110,-</span></div><p>Kreveta.</p></div>
+    <div class="it"><div class="it__row"><h3>Grill Sake</h3><span class="price">115,-</span></div><p>Grilovaný losos.</p></div>
+    <div class="it"><div class="it__row"><h3>Spice Sake</h3><span class="price">120,-</span></div><p>Pálivý losos.</p></div>
+    <div class="it"><div class="it__row"><h3>Ikarimi</h3><span class="price">130,-</span></div><p>Uzený losos.</p></div>
+    <div class="it"><div class="it__row"><h3>Asapura</h3><span class="price">105,-</span></div><p>Chřest.</p></div>
+  </div>
+</section>
+
+<!-- URAMAKI -->
+<section class="cat" id="uramaki">
+  <div class="cat__head"><h2>Uramaki Special <small>Inside-out rolky · 8 ks</small></h2><div class="cat__icon">🍱</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>California Sesame Roll</h3><span class="price">235,-</span></div><p>Sezam, krabí maso, okurka, domácí japonská majonéza, avokádo.</p></div>
+    <div class="it"><div class="it__row"><h3>California Tobiko Roll</h3><span class="price">265,-</span></div><p>Kaviár, losos, okurka, domácí japonská majonéza, avokádo.</p></div>
+    <div class="it"><div class="it__row"><h3>Philadelphia Roll</h3><span class="price">260,-</span></div><p>Grilovaný losos, sýr Philadelphia, kaviár, japonská majonéza.</p></div>
+    <div class="it"><div class="it__row"><h3>Unagi Roll</h3><span class="price">305,-</span></div><p>Úhoř, domácí japonská majonéza, kaviár, avokádo, okurka.</p></div>
+    <div class="it star"><div class="it__row"><h3>Yuzu Special Roll</h3><span class="price">275,-</span></div><p>Domácí tuňáková pasta, okurka, rolka posypaná kudrnkou, zdobená yuzu-wasabi majonézou.</p><span class="it__tag">Signature</span></div>
+    <div class="it"><div class="it__row"><h3>Skin Ikarimi Roll</h3><span class="price">290,-</span></div><p>Avokádo, domácí japonská majonéza, grilovaný losos, smažená kreveta, zabalená do uzeného či čerstvého lososa.</p></div>
+    <div class="it"><div class="it__row"><h3>Chicken Teriyaki Roll</h3><span class="price">260,-</span></div><p>Grilované kuřecí maso, sýr Philadelphia, smažená cibulka zdobená teriyaki omáčkou a sezamem.</p></div>
+    <div class="it star"><div class="it__row"><h3>★ GOLD MILIONARIO</h3><span class="price">550,-</span></div><p>Kaviár z pstruha, mušle Svatého Jakuba, krémový sýr, chřest, uzený losos, foie gras, rolka zdobená pravým 24karátovým zlatem. Naše podpisová specialita.</p><span class="it__tag">24K Gold</span></div>
+    <div class="it"><div class="it__row"><h3>Katsubo Roll</h3><span class="price">290,-</span></div><p>Smažený pikantní tuňák, okurka, uzený losos, smažená cibulka, zdobená hoblinkami z uzeného tuňáka.</p></div>
+    <div class="it"><div class="it__row"><h3>Maguro Spice Roll</h3><span class="price">295,-</span></div><p>Pikantní omáčka, avokádo, okurka, smažená cibulka, sezam, zdobená tatarákem z tuňáka.</p></div>
+    <div class="it"><div class="it__row"><h3>Salmon Spice Roll</h3><span class="price">285,-</span></div><p>Pikantní omáčka, avokádo, okurka, smažená cibulka, sezam, zdobená tatarákem z lososa.</p></div>
+    <div class="it"><div class="it__row"><h3>Caterpillar Roll</h3><span class="price">305,-</span></div><p>Úhoř, domácí japonská majonéza, okurka, kaviár, rolka zabalená do avokáda, unagi omáčka, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>PSK Special Roll</h3><span class="price">290,-</span></div><p>Pálivá omáčka, smažená kreveta v tempuře, krabí maso, avokádo, japonská majonéza, jalapeños papričky.</p></div>
+  </div>
+</section>
+
+<!-- CRUNCHY ROLL -->
+<section class="cat" id="crunchy">
+  <div class="cat__head"><h2>Crunchy Roll &amp; Fusion <small>Smažené rolky · 10 ks / Fusion 5 ks</small></h2><div class="cat__icon">🔥</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Yuzu Crunchy Roll</h3><span class="price">355,-</span></div><p>Losos, tuňák, Philadelphia, avokádo, rolka smažená v tempuře a zdobená kaviárem (10 ks).</p></div>
+    <div class="it"><div class="it__row"><h3>Boom Roll</h3><span class="price">335,-</span></div><p>Tuňák, losos, Philadelphia, avokádo, mrkev, koriandr, smažená v tempuře (10 ks).</p></div>
+    <div class="it"><div class="it__row"><h3>Chicken Boom Roll</h3><span class="price">295,-</span></div><p>Kuřecí maso, Philadelphia, avokádo, mrkev, koriandr, teriyaki omáčka, sezam, smažená cibulka (10 ks).</p></div>
+    <div class="it star"><div class="it__row"><h3>Special Roll pro odvážné!</h3><span class="price">305,-</span></div><p>Extra hot chilli futomaki roll: jalapeños, domácí pasta s carolina reaper, avokádo, losos, okurka (10 ks).</p><span class="it__tag">Extra pálivé</span></div>
+    <div class="it"><div class="it__row"><h3>Chef Roll (Fusion 5 ks)</h3><span class="price">300,-</span></div><p>Rýžový papír, rukola, úhoř, tuňák, sushi zázvor, mango, unagi omáčka, yuzu omáčka.</p></div>
+    <div class="it"><div class="it__row"><h3>Ebi Ebi Sweet (Fusion 5 ks)</h3><span class="price">285,-</span></div><p>Rýžový papír, ledový salát, smažená tygří kreveta, smažená cibulka, japonská jemně pikantní omáčka, avokádo.</p></div>
+    <div class="it"><div class="it__row"><h3>Vegetarian Roll (Fusion 5 ks)</h3><span class="price">250,-</span></div><p>Rýžový papír, ledový salát, shiitake, okurka, avokádo, sezam, osinko, mrkev, sýr Philadelphia.</p></div>
+  </div>
+</section>
+
+<!-- FUTOMAKI -->
+<section class="cat" id="futomaki">
+  <div class="cat__head"><h2>Futomaki <small>Velké rolky · 8 ks</small></h2><div class="cat__icon">🍙</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Vegetarian Roll</h3><span class="price">235,-</span></div><p>Avokádo, shiitake, osinko, okurka, mrkev, červená řepa, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>Ebi Roll</h3><span class="price">275,-</span></div><p>Smažená tygří kreveta, domácí japonská majonéza.</p></div>
+    <div class="it"><div class="it__row"><h3>Salmon Roll</h3><span class="price">275,-</span></div><p>Smažený losos, domácí japonská majonéza, okurka, avokádo.</p></div>
+  </div>
+</section>
+
+<!-- SASHIMI -->
+<section class="cat" id="sashimi">
+  <div class="cat__head"><h2>Sashimi <small>Čerstvé plátky ryby · 3 ks / 9 ks set</small></h2><div class="cat__icon">🐟</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Sashimi Losos</h3><span class="price">175,-</span></div><p>3 ks čerstvě krájeného lososa.</p></div>
+    <div class="it"><div class="it__row"><h3>Sashimi Tuňák</h3><span class="price">199,-</span></div><p>3 ks čerstvě krájeného tuňáka.</p></div>
+    <div class="it"><div class="it__row"><h3>Sashimi Kreveta</h3><span class="price">165,-</span></div><p>3 ks tygří krevety.</p></div>
+    <div class="it"><div class="it__row"><h3>Sashimi Úhoř</h3><span class="price">199,-</span></div><p>3 ks úhoře marinovaného v unagi omáčce.</p></div>
+    <div class="it star"><div class="it__row"><h3>Sashimi Set 9 ks – Maguro / Sake / Unagi</h3><span class="price">355,-</span></div><p>Tuňák, losos, úhoř – 9 ks čerstvě krájené ryby.</p></div>
+    <div class="it"><div class="it__row"><h3>Sashimi Set 9 ks – Maguro / Sake / Ebi</h3><span class="price">345,-</span></div><p>Tuňák, losos, kreveta – 9 ks.</p></div>
+    <div class="it"><div class="it__row"><h3>Sashimi Set 9 ks – Sake / Ebi / Unagi</h3><span class="price">355,-</span></div><p>Losos, kreveta, úhoř – 9 ks.</p></div>
+  </div>
+</section>
+
+<!-- BOWLS -->
+<section class="cat" id="bowls">
+  <div class="cat__head"><h2>Sushi Bowls <small>Rýžové mísy · Poke style</small></h2><div class="cat__icon">🥗</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Salmon Bowl</h3><span class="price">320,-</span></div><p>Sushi rýže, avokádo, řasa nori, wakame salát, kaviár, krabí tyčinka, losos marinovaný v teriyaki omáčce, sezam, salát, mango, edamame.</p></div>
+    <div class="it star"><div class="it__row"><h3>Tuna Bowl</h3><span class="price">345,-</span></div><p>Sushi rýže, avokádo, řasa nori, wakame salát, kaviár, krabí tyčinka, tuňák v pálivé omáčce, sezam, salát, edamame, mango.</p><span class="it__tag">Chef pick</span></div>
+    <div class="it"><div class="it__row"><h3>Unagi Bowl</h3><span class="price">355,-</span></div><p>Sushi rýže, avokádo, řasa nori, wakame salát, kaviár, krabí tyčinka, úhoř marinovaný v unagi omáčce, sezam, salát, edamame, mango.</p></div>
+    <div class="it"><div class="it__row"><h3>Vegetarian Bowl</h3><span class="price">275,-</span></div><p>Sushi rýže, avokádo, řasa nori, wakame salát, ledový salát, mrkev, červená řepa, okurka, koriandr, mango, shiitake, sezam.</p></div>
+  </div>
+</section>
+
+<!-- UDON -->
+<section class="cat" id="udon">
+  <div class="cat__head"><h2>Udon <small>Japonské pšeničné nudle</small></h2><div class="cat__icon">🍝</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Udon kuřecí</h3><span class="price">235,-</span></div><p>Restovaná zelenina, kuřecí maso, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>Udon hovězí</h3><span class="price">255,-</span></div><p>Restovaná zelenina, hovězí maso, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>Udon vepřové</h3><span class="price">245,-</span></div><p>Restovaná zelenina, vepřový bůček, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>Udon veggie</h3><span class="price">225,-</span></div><p>Restovaná zelenina, vejce, tofu, sezam.</p></div>
+    <div class="it"><div class="it__row"><h3>Udon krevetové</h3><span class="price">275,-</span></div><p>Krevety, restovaná zelenina, sezam.</p></div>
+    <div class="it star"><div class="it__row"><h3>Udon Kari</h3><span class="price">225–275,-</span></div><p>Žluté / zelené / červené kari. Kuřecí / hovězí / vepřový bůček / veggie. Sezam, restovaná zelenina, maso dle výběru nebo tofu.</p><span class="it__tag">Fusion</span></div>
+  </div>
+</section>
+
+<!-- KARI -->
+<section class="cat" id="kari">
+  <div class="cat__head"><h2>Thajské speciality &amp; Kari <small>Asian specialties</small></h2><div class="cat__icon">🌶</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Bun Bo Nam Bộ</h3><span class="price">229–249,-</span></div><p>Tradiční vietnamský pokrm: hovězí / kuřecí maso / tofu, skleněné nudle, bylinky, zelenina, koriandr, arašídy, česnek, sladko-kyselá zálivka.</p></div>
+    <div class="it"><div class="it__row"><h3>Teriyaki s rýží</h3><span class="price">240–275,-</span></div><p>Hovězí / kuřecí / vepřové / krevety / tofu. Zelenina, teriyaki omáčka, sezam, paprika, bambusové výhonky, jasmínová rýže.</p></div>
+    <div class="it star"><div class="it__row"><h3>Kung Pao s pepřem</h3><span class="price">240–275,-</span></div><p>Tradiční kung pao s jasmínovou rýží, sečuánský pepř, cibule, jarní cibulka, arašídy, česnek, zázvor, mungo klíčky, bylinky.</p></div>
+    <div class="it"><div class="it__row"><h3>Tonkatsu smažený kuřecí řízek</h3><span class="price">245,-</span></div><p>V panko strouhance, filírovaný na plátky, zelný salát s koprem, tonkatsu omáčka, příloha dle výběru – rýže / hranolky / bramborové pyré.</p></div>
+    <div class="it"><div class="it__row"><h3>Green Kari</h3><span class="price">289,-</span></div><p>Zelené kari s kokosovým mlékem, hovězí maso, sójové klíčky, fazolové lusky, červená cibule, trikolóra, jasmínová rýže.</p></div>
+    <div class="it"><div class="it__row"><h3>Yellow Kari</h3><span class="price">289,-</span></div><p>Kuřecí maso nebo tofu, lilek, cuketa, kokosové mléko, červená cibule, trikolóra, jasmínová rýže, koriandr, sezamový olej.</p></div>
+    <div class="it"><div class="it__row"><h3>Red Kari</h3><span class="price">289,-</span></div><p>Červené kari s kokosovým mlékem, hovězí maso, sójové klíčky, fazolové lusky, červená cibule, trikolóra, jasmínová rýže.</p></div>
+  </div>
+</section>
+
+<!-- STEAKY -->
+<section class="cat" id="steaky">
+  <div class="cat__head"><h2>Steaky na grilu <small>Grilled steaks</small></h2><div class="cat__icon">🥩</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Grilovaný filet z lososa</h3><span class="price">395,-</span></div><p>Bramborové pyré nebo rýže, grilovaná zelenina, koriandrový olej.</p></div>
+    <div class="it star"><div class="it__row"><h3>Grilovaný filet z tuňáka</h3><span class="price">430,-</span></div><p>V sezamové krustě, bramborové pyré nebo rýže, yuzu omáčka, grilovaná zelenina, koriandrový olej.</p><span class="it__tag">Chef's best</span></div>
+    <div class="it"><div class="it__row"><h3>Hovězí flank steak</h3><span class="price">395,-</span></div><p>Filírovaný na plátky, grilovaná zelenina, hranolky, silná pepřová omáčka.</p></div>
+    <div class="it"><div class="it__row"><h3>Vepřový Tomahawk</h3><span class="price">385,-</span></div><p>Vepřový steak s kostí, silná pepřová omáčka, grilovaná zelenina, hranolky.</p></div>
+  </div>
+</section>
+
+<!-- SMAŽENÁ RÝŽE -->
+<section class="cat" id="ryze">
+  <div class="cat__head"><h2>Smažená rýže <small>Fried rice</small></h2><div class="cat__icon">🍚</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Khao Pad Khai</h3><span class="price">255,-</span></div><p>Jasmínová smažená rýže na sezamovém oleji s kuřecím masem, vejcem a zeleninou, sladká sójová omáčka.</p></div>
+    <div class="it"><div class="it__row"><h3>Khao Pad Goong</h3><span class="price">275,-</span></div><p>Jasmínová smažená rýže na sezamovém oleji s krevetami, česnekem, chilli a zeleninou, limetová šťáva, sladká sójová omáčka.</p></div>
+  </div>
+</section>
+
+<!-- PŘÍLOHY -->
+<section class="cat" id="prilohy">
+  <div class="cat__head"><h2>Přílohy &amp; Omáčky <small>Sides &amp; sauces</small></h2><div class="cat__icon">🥟</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Hranolky</h3><span class="price">65,-</span></div><p>Domácí hranolky.</p></div>
+    <div class="it"><div class="it__row"><h3>Grilovaná zelenina</h3><span class="price">85,-</span></div><p>Sezónní zelenina na grilu.</p></div>
+    <div class="it"><div class="it__row"><h3>Jasmínová rýže</h3><span class="price">55,-</span></div><p>Sypká jasmínová rýže.</p></div>
+    <div class="it"><div class="it__row"><h3>Sushi rýže</h3><span class="price">65,-</span></div><p>Krátkozrnná rýže s octovou dochucovací směsí.</p></div>
+    <div class="it"><div class="it__row"><h3>Bramborové pyré</h3><span class="price">70,-</span></div><p>Máslové bramborové pyré.</p></div>
+    <div class="it"><div class="it__row"><h3>Unagi omáčka</h3><span class="price">50,-</span></div><p>Sladká sójová omáčka.</p></div>
+    <div class="it"><div class="it__row"><h3>Sweet chilli omáčka</h3><span class="price">50,-</span></div><p>Sladko-pikantní.</p></div>
+    <div class="it"><div class="it__row"><h3>Domácí japonská omáčka</h3><span class="price">50,-</span></div><p>Vlastní receptura.</p></div>
+    <div class="it"><div class="it__row"><h3>Teriyaki omáčka</h3><span class="price">50,-</span></div><p>Klasika k rýži a grilovanému masu.</p></div>
+    <div class="it"><div class="it__row"><h3>Pepřová omáčka</h3><span class="price">65,-</span></div><p>Silná k steakům.</p></div>
+  </div>
+</section>
+
+<!-- SETY -->
+<section class="cat" id="sety">
+  <div class="cat__head"><h2>Yuzu Sety <small>Zvýhodněné kombinace · pro jednotlivce i skupiny</small></h2><div class="cat__icon">🎁</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Menu 1 · 14 ks</h3><span class="price">325,-</span></div><p>Maki sake 6 · Maki tekka 6 · Nigiri sake 1 · Nigiri maguro 1.</p></div>
+    <div class="it"><div class="it__row"><h3>Menu 2 · 20 ks</h3><span class="price">345,-</span></div><p>California sezam 8 · Maki sake 6 · Maki kappa 6.</p></div>
+    <div class="it"><div class="it__row"><h3>Menu 3 · 24 ks</h3><span class="price">375,-</span></div><p>Maki sake 6 · Maki avokádo 6 · Maki ebi 6 · Maki tekka 6.</p></div>
+    <div class="it"><div class="it__row"><h3>Menu 4 · 42 ks</h3><span class="price">1 099,-</span></div><p>Maki sake 42 ks – velký losos večer.</p></div>
+    <div class="it"><div class="it__row"><h3>Menu 5 · 50 ks</h3><span class="price">1 399,-</span></div><p>California sezam 8 · Tobiko 8 · Futomaki salmon 2 · Maki sake 8 · Maki tekka 6 · Maki kani 6 · Nigiri sake 6 · Maguro 2 · Ebi 2 · Unagi 2.</p></div>
+    <div class="it"><div class="it__row"><h3>Vegetarian Menu 1 · 14 ks</h3><span class="price">240,-</span></div><p>Maki avokádo 6 · Maki kappa 6 · Nigiri avokádo 1 · Nigiri asapura 1.</p></div>
+    <div class="it"><div class="it__row"><h3>Vegetarian Menu 2 · 20 ks</h3><span class="price">295,-</span></div><p>Vegetarian roll 8 · Maki avokádo 6 · Maki asapura 6.</p></div>
+    <div class="it"><div class="it__row"><h3>Nigiri Menu · 10 ks</h3><span class="price">690,-</span></div><p>Losos 2 · Tuňák 2 · Kreveta 2 · Avokádo 2 · Hotategai 2.</p></div>
+    <div class="it"><div class="it__row"><h3>Crunchy Menu · 24 ks</h3><span class="price">690,-</span></div><p>Yuzu crunchy 5 · Boom 5 · Maki sake 6 · Maki avokádo 6 · Nigiri sake 1 · Nigiri avokádo 1.</p></div>
+    <div class="it"><div class="it__row"><h3>Party Menu · 80 ks</h3><span class="price">2 390,-</span></div><p>Kombinace maki, rollů, sashimi a nigiri – pro 6–8 lidí.</p></div>
+    <div class="it star"><div class="it__row"><h3>★ GOLD VIP MENU · 51 ks</h3><span class="price">2 500,-</span></div><p>Gold Milionario 8 · Katsubo 8 · Maki foie gras tobiko 6 · Maki ikarimi fried onion 6 · Maki hotategai 6 · Nigiri foie gras 2 · Nigiri ikarimi 2 · Nigiri tobiko 2 · Nigiri hotategai 2 · Sashimi sake 3 · Sashimi hotategai 3 · Sashimi unagi 3.</p><span class="it__tag">Nejvyšší zážitek</span></div>
+  </div>
+</section>
+
+<!-- DEZERTY -->
+<section class="cat" id="dezerty">
+  <div class="cat__head"><h2>Dezerty <small>Desserts</small></h2><div class="cat__icon">🍧</div></div>
+  <div class="items">
+    <div class="it"><div class="it__row"><h3>Mochi koláčky</h3><span class="price">115,-</span></div><p>Z rýžové mouky s karamelem, ovocem a mátou.</p></div>
+    <div class="it"><div class="it__row"><h3>Domácí kokosový puding</h3><span class="price">100,-</span></div><p>Ovoce, karamel, máta.</p></div>
+    <div class="it star"><div class="it__row"><h3>Yuzu Sweet Roll · 8 ks</h3><span class="price">195,-</span></div><p>Sladká rýže, tvarohovo-jogurtová pěna s kousky yuzu, ovoce, strouhaný kokos, karamel, máta.</p><span class="it__tag">Signature</span></div>
+    <div class="it"><div class="it__row"><h3>Yuzu zmrzlina</h3><span class="price">125,-</span></div><p>Vlastní výroba, ovoce, karamel, máta.</p></div>
+  </div>
+</section>
+
+<div class="note">
+  <p><strong>Alergeny</strong> – informace o výskytu konkrétních alergenů v pokrmech a nápojích žádejte u obsluhy.</p>
+  <p style="margin-top:.5rem"><strong>Ceny</strong> – uvedeny v Kč, včetně DPH. Vyhrazujeme si právo na změnu. Kompletní nápojový lístek v restauraci nebo v PDF.</p>
+</div>
+
+<!-- CTA band -->
+<div class="cta-band">
+  <h3>Přijďte ochutnat</h3>
+  <p>Rezervujte si stůl, objednejte rozvoz po Čelákovicích, nebo domluvte catering na vaši akci.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+    <a href="tel:+420777725777" class="btn btn--dark">📞 +420 777 725 777</a>
+    <a href="../#contact" class="btn btn--dark">Rezervace online</a>
+  </div>
+</div>
+
+</main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Yuzu Sushi Restaurant · V Prokopě 1551, Čelákovice 250 88 · Web od <a href="https://strankyprovas.cz" target="_blank">StránkyProVás</a></p>
+</footer>
+
+<script>
+// active anchor highlight
+const anchors=document.querySelectorAll('aside.anchors a');
+const sections=document.querySelectorAll('.cat');
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      anchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>obs.observe(s));
+
+// smooth scroll for anchors
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const h=a.getAttribute('href');if(h==='#')return;
+    const t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>

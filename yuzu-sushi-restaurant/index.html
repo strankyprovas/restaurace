@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuzu sushi restaurant</title>
+  <title>Yuzu Sushi Restaurant · Sushi & Thajská kuchyně v Čelákovicích</title>
+  <meta name="description" content="Autentická thajsko-japonská kuchyně v Čelákovicích. Čerstvé sushi, Pad Thai, Tom Yum a 24K Gold Sushi. Otevřeno každý den 11:00–21:00, rozvoz 777 725 777.">
+  <link rel="icon" href="photos/photo_1.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -13,15 +15,15 @@
     img { max-width: 100%; display: block; }
 
     :root {
-      --cream:   #faf7f2;
-      --cream2:  #f2ece2;
-      --dark:    #111111;
-      --dark2:   #1a1a1a;
-      --dark3:   #242424;
-      --gold:    #c8963e;
-      --gold2:   #e8b96a;
-      --text:    #1a1212;
-      --muted:   #7a6f6f;
+      --cream:   #ffffff;
+      --cream2:  #f5f5f5;
+      --dark:    #0a0a0a;
+      --dark2:   #141414;
+      --dark3:   #1c1c1c;
+      --gold:    #f5c518;
+      --gold2:   #ffd84d;
+      --text:    #0a0a0a;
+      --muted:   #666666;
       --white:   #ffffff;
       --ease:    cubic-bezier(0.4, 0, 0.2, 1);
       --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -53,7 +55,7 @@
       background: rgba(17,17,17,.96);
       backdrop-filter: blur(16px);
       padding: 1rem 5%;
-      box-shadow: 0 1px 0 rgba(200,150,62,.15);
+      box-shadow: 0 1px 0 rgba(245,197,24,.18);
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
@@ -168,7 +170,7 @@
     }
     .btn-gold:hover {
       background: var(--gold2); transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200,150,62,.35);
+      box-shadow: 0 8px 24px rgba(245,197,24,.4);
     }
     .btn-ghost {
       background: transparent; color: var(--white);
@@ -234,8 +236,8 @@
     /* ── STATS BAR ────────────────────────────────── */
     .stats-bar {
       background: var(--dark2);
-      border-top: 1px solid rgba(200,150,62,.2);
-      border-bottom: 1px solid rgba(200,150,62,.2);
+      border-top: 1px solid rgba(245,197,24,.25);
+      border-bottom: 1px solid rgba(245,197,24,.25);
       display: flex; justify-content: center; flex-wrap: wrap;
     }
     .stat-item {
@@ -326,7 +328,7 @@
     }
     .about-feat-icon {
       width: 38px; height: 38px; flex-shrink: 0;
-      border: 1px solid rgba(200,150,62,.4);
+      border: 1px solid rgba(245,197,24,.45);
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem; color: var(--gold);
     }
@@ -343,8 +345,8 @@
     .menu-header .section-label::before { display: none; }
     .menu-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: rgba(200,150,62,.12);
-      border: 1px solid rgba(200,150,62,.12);
+      gap: 1px; background: rgba(245,197,24,.15);
+      border: 1px solid rgba(245,197,24,.15);
     }
     .menu-item {
       background: var(--white);
@@ -383,7 +385,7 @@
     .menu-tag {
       font-size: .65rem; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; padding: .3rem .7rem;
-      background: rgba(200,150,62,.1); color: var(--gold);
+      background: rgba(245,197,24,.12); color: var(--gold);
     }
 
     /* ── GALLERY MARQUEE ──────────────────────────── */
@@ -447,7 +449,7 @@
     }
     .dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(200,150,62,.25);
+      background: rgba(245,197,24,.3);
       border: none; cursor: pointer; transition: all .3s;
     }
     .dot.active { background: var(--gold); transform: scale(1.4); }
@@ -460,7 +462,7 @@
     }
     .special-bg {
       position: absolute; inset: 0;
-      background: url('../stock_photos/photo_3.jpg') center/cover;
+      background: url('photos/photo_3.jpg') center/cover;
       opacity: .15;
     }
     .special-inner {
@@ -475,12 +477,12 @@
     }
     .special-card {
       background: rgba(255,255,255,.05);
-      border: 1px solid rgba(200,150,62,.2);
+      border: 1px solid rgba(245,197,24,.25);
       padding: 1.5rem 2rem;
       display: flex; gap: 1.5rem; align-items: flex-start;
       transition: background .3s;
     }
-    .special-card:hover { background: rgba(200,150,62,.08); }
+    .special-card:hover { background: rgba(245,197,24,.1); }
     .special-card-icon {
       font-size: 1.8rem; flex-shrink: 0;
       width: 44px; height: 44px;
@@ -506,7 +508,7 @@
     }
     .contact-icon {
       width: 42px; height: 42px; flex-shrink: 0;
-      border: 1px solid rgba(200,150,62,.35);
+      border: 1px solid rgba(245,197,24,.4);
       display: flex; align-items: center; justify-content: center;
       color: var(--gold); font-size: 1rem;
     }
@@ -556,14 +558,14 @@
     }
     .form-submit:hover {
       background: var(--gold2);
-      box-shadow: 0 6px 20px rgba(200,150,62,.3);
+      box-shadow: 0 6px 20px rgba(245,197,24,.35);
     }
 
     /* ── FOOTER ───────────────────────────────────── */
     footer {
       background: var(--dark);
       padding: 5rem 8% 2rem;
-      border-top: 1px solid rgba(200,150,62,.15);
+      border-top: 1px solid rgba(245,197,24,.18);
     }
     .footer-grid {
       display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
@@ -622,9 +624,142 @@
     }
     .footer-copy a { color: var(--gold); text-decoration: none; }
 
+    /* ── MENUBOT ──────────────────────────────────── */
+    #menubot-fab {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--gold); color: var(--dark);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 10px 30px rgba(245,197,24,.45), 0 0 0 0 rgba(245,197,24,.6);
+      z-index: 600; transition: transform .3s var(--ease);
+      animation: mbotPulse 2.4s infinite;
+    }
+    #menubot-fab:hover { transform: translateY(-3px) scale(1.05); }
+    #menubot-fab .mbot-badge {
+      position: absolute; top: -4px; right: -4px;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--dark); color: var(--gold);
+      font-size: .7rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--gold);
+    }
+    @keyframes mbotPulse {
+      0%,100% { box-shadow: 0 10px 30px rgba(245,197,24,.45), 0 0 0 0 rgba(245,197,24,.5); }
+      50%     { box-shadow: 0 10px 30px rgba(245,197,24,.45), 0 0 0 14px rgba(245,197,24,0); }
+    }
+    #menubot-panel {
+      position: fixed; bottom: 6.5rem; right: 2rem;
+      width: min(380px, calc(100vw - 2rem));
+      max-height: min(560px, calc(100vh - 9rem));
+      background: var(--dark);
+      border: 1px solid rgba(245,197,24,.35);
+      border-radius: 16px; overflow: hidden;
+      display: none; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      z-index: 601; color: var(--white);
+      font-family: 'Poppins', sans-serif;
+    }
+    #menubot-panel.open { display: flex; animation: mbotIn .25s var(--ease); }
+    @keyframes mbotIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .mbot-head {
+      padding: 1.1rem 1.2rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--dark);
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .mbot-head-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--dark); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .mbot-head-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600; line-height: 1.1;
+    }
+    .mbot-head-sub { font-size: .7rem; opacity: .7; letter-spacing: .05em; }
+    .mbot-close {
+      margin-left: auto; background: transparent; border: none;
+      color: var(--dark); font-size: 1.2rem; cursor: pointer; opacity: .7;
+    }
+    .mbot-close:hover { opacity: 1; }
+    .mbot-log {
+      flex: 1; overflow-y: auto;
+      padding: 1rem 1rem .5rem;
+      display: flex; flex-direction: column; gap: .6rem;
+      background: var(--dark);
+    }
+    .mbot-msg {
+      max-width: 85%; padding: .7rem .95rem;
+      font-size: .85rem; line-height: 1.5;
+      border-radius: 14px;
+    }
+    .mbot-msg.bot {
+      background: rgba(245,197,24,.1); color: var(--white);
+      border: 1px solid rgba(245,197,24,.2);
+      align-self: flex-start; border-bottom-left-radius: 4px;
+    }
+    .mbot-msg.user {
+      background: var(--gold); color: var(--dark);
+      align-self: flex-end; border-bottom-right-radius: 4px;
+      font-weight: 500;
+    }
+    .mbot-msg strong { color: var(--gold2); }
+    .mbot-msg.bot a { color: var(--gold2); }
+    .mbot-typing { display: flex; gap: 4px; padding: .3rem 0; }
+    .mbot-typing span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); opacity: .4;
+      animation: mbotBlink 1.2s infinite;
+    }
+    .mbot-typing span:nth-child(2) { animation-delay: .2s; }
+    .mbot-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes mbotBlink {
+      0%,100% { opacity: .3; transform: scale(.9); }
+      50%     { opacity: 1;  transform: scale(1.2); }
+    }
+    .mbot-chips {
+      padding: .6rem 1rem 1rem;
+      display: flex; flex-wrap: wrap; gap: .4rem;
+      border-top: 1px solid rgba(245,197,24,.15);
+      background: var(--dark2);
+    }
+    .mbot-chip {
+      background: transparent; color: var(--gold);
+      border: 1px solid rgba(245,197,24,.4);
+      padding: .45rem .85rem; border-radius: 999px;
+      font-size: .72rem; cursor: pointer;
+      transition: all .2s; font-family: inherit;
+    }
+    .mbot-chip:hover { background: var(--gold); color: var(--dark); }
+    .mbot-input-row {
+      display: flex; gap: .4rem; padding: .6rem;
+      background: var(--dark2);
+      border-top: 1px solid rgba(245,197,24,.15);
+    }
+    .mbot-input-row input {
+      flex: 1; background: var(--dark3); color: var(--white);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: .65rem .85rem; font-size: .85rem;
+      border-radius: 10px; outline: none;
+      font-family: inherit;
+    }
+    .mbot-input-row input:focus { border-color: var(--gold); }
+    .mbot-send {
+      background: var(--gold); color: var(--dark);
+      border: none; padding: 0 1rem; border-radius: 10px;
+      cursor: pointer; font-weight: 600; font-size: .85rem;
+    }
+    .mbot-send:hover { background: var(--gold2); }
+
     /* ── BACK TO TOP ──────────────────────────────── */
     #back-top {
-      position: fixed; bottom: 2rem; right: 2rem;
+      position: fixed; bottom: 2rem; left: 2rem;
       width: 42px; height: 42px;
       background: var(--gold); color: var(--dark);
       border: none; cursor: pointer; font-size: 1.1rem;
@@ -690,7 +825,7 @@
 <body>
 <!-- UKÁZKA BANNER -->
 <div id="ukazka-banner" style="position:fixed;top:0;left:0;width:100%;background:#ff6b35;color:#fff;text-align:center;padding:10px;font-size:14px;font-weight:bold;z-index:9999;box-sizing:border-box;">
-  ⚡ UKÁZKA – finální web bude s vašimi fotkami a texty
+  ⚡ UKÁZKA – ochutnávka webu pro Yuzu Sushi · fotky / texty doladíme společně
 </div>
 <style>body{margin-top:38px !important;}</style>
 
@@ -699,7 +834,7 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Yuzu sushi restaurant<span>.</span></a>
+  <a href="#" class="nav-logo">Yuzu Sushi<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">O nás</a></li>
     <li><a href="#menu">Menu</a></li>
@@ -724,12 +859,12 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-badge">Čelákovice · Restaurace</div>
+    <div class="hero-badge">Čelákovice · Sushi & Thajská kuchyně</div>
     <h1 class="hero-title">
-      Yuzu sushi restaurant<br>
-      <em>Gastronomie s duší</em>
+      Yuzu Sushi<br>
+      <em>100% autentická chuť</em>
     </h1>
-    <p class="hero-sub">Každý pokrm je výsledkem let zkušeností a lásky ke gastronomii.</p>
+    <p class="hero-sub">Thajsko-japonská kuchyně z čerstvých surovin té nejvyšší kvality – včetně sushi s 24karátovým zlatem.</p>
     <div class="hero-btns">
       <a href="#menu" class="btn-gold">Naše menu</a>
       <a href="#contact" class="btn-ghost">Rezervovat stůl</a>
@@ -738,36 +873,36 @@
       <div class="hero-hours-dot"></div>
       <div class="hero-hours-text">
         <strong>Dnes otevřeno</strong>
-        Po–Pá 11:00–22:00 · So–Ne 12:00–23:00
+        Po–Ne 11:00–21:00 · Rozvoz po Čelákovicích
       </div>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="../stock_photos/photo_1.jpg" alt="Yuzu sushi restaurant">
+      <img src="photos/photo_1.jpg" alt="Yuzu Sushi Restaurant – sushi mísa">
     </div>
     <div class="hero-img-overlay"></div>
-    <div class="hero-vertical-text">Dobrá chuť</div>
+    <div class="hero-vertical-text">Itadakimasu</div>
   </div>
 </section>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-item" data-r>
-    <div class="stat-number"><span data-count="12">0</span><span class="stat-suffix">+</span></div>
+    <div class="stat-number"><span data-count="15">0</span><span class="stat-suffix">+</span></div>
     <div class="stat-label">Let zkušeností</div>
   </div>
   <div class="stat-item" data-r>
-    <div class="stat-number"><span data-count="48">0</span></div>
-    <div class="stat-label">Jídel v menu</div>
+    <div class="stat-number"><span data-count="60">0</span><span class="stat-suffix">+</span></div>
+    <div class="stat-label">Druhů sushi & jídel</div>
   </div>
   <div class="stat-item" data-r>
-    <div class="stat-number"><span data-count="196">0</span><span class="stat-suffix">+</span></div>
-    <div class="stat-label">Recenzí na Google</div>
+    <div class="stat-number">24<span class="stat-suffix">K</span></div>
+    <div class="stat-label">Gold sushi</div>
   </div>
   <div class="stat-item" data-r>
     <div class="stat-number">4.7<span class="stat-suffix">★</span></div>
-    <div class="stat-label">Hodnocení</div>
+    <div class="stat-label">Hodnocení Google</div>
   </div>
 </div>
 
@@ -775,33 +910,33 @@
 <section id="about" data-r>
   <div class="about-grid">
     <div class="about-img" data-r="left">
-      <img src="../stock_photos/photo_2.jpg" alt="O nás – Yuzu sushi restaurant">
+      <img src="photos/photo_2.jpg" alt="Šéfkuchař Filip Cibuľa – Yuzu Sushi">
       <div class="about-img-deco"></div>
       <div class="about-img-badge">
-        <strong>12</strong>
-        <span>Roků<br>tradice</span>
+        <strong>100%</strong>
+        <span>Autenticky<br>vaříme</span>
       </div>
     </div>
     <div class="about-content" data-r="right">
       <div class="section-label">Náš příběh</div>
-      <h2 class="section-title">Vítejte v<br><em>Yuzu sushi restaurant</em></h2>
-      <p class="about-text">Jsme rodinný podnik s vášní pro dobré jídlo a pohostinnost. Každý den připravujeme čerstvá jídla z lokálních surovin a věříme, že dobrý oběd nebo večeře je víc než jen jídlo – je to zážitek, který spojuje lidi.</p>
+      <h2 class="section-title">Thajsko-japonská<br><em>chuť v Čelákovicích</em></h2>
+      <p class="about-text">Yuzu Sushi vede šéfkuchař <strong>Filip Cibuľa</strong> s týmem specialistů, kteří mají za sebou léta praxe v prestižních restauracích jako Kobe Restaurant, Asian Temple, Sushi Time nebo Sakura Sushi. Vaříme 100% autenticky – z čerstvých surovin té nejvyšší kvality. A jako jedni z mála u nás ochutnáte sushi zdobené 24karátovým zlatem.</p>
       <div class="about-features">
         <div class="about-feat">
-          <div class="about-feat-icon">🌿</div>
-          <div><h4>Čerstvé suroviny</h4><p>Každý den od lokálních dodavatelů</p></div>
+          <div class="about-feat-icon">🍣</div>
+          <div><h4>Čerstvé sushi</h4><p>Ryby od prověřených dodavatelů</p></div>
         </div>
         <div class="about-feat">
           <div class="about-feat-icon">👨‍🍳</div>
-          <div><h4>Zkušení kuchaři</h4><p>S vášní pro gastronomii</p></div>
+          <div><h4>Specialisté v týmu</h4><p>Kobe, Asian Temple, Sushi Time</p></div>
         </div>
         <div class="about-feat">
-          <div class="about-feat-icon">🍷</div>
-          <div><h4>Výběr nápojů</h4><p>Víno, pivo i nealkoholické</p></div>
+          <div class="about-feat-icon">✨</div>
+          <div><h4>Sushi se zlatem</h4><p>24karátová specialita</p></div>
         </div>
         <div class="about-feat">
-          <div class="about-feat-icon">📅</div>
-          <div><h4>Soukromé akce</h4><p>Narozeniny, firemní večírky</p></div>
+          <div class="about-feat-icon">🛵</div>
+          <div><h4>Rozvoz Čelákovice</h4><p>Objednávky na 777 725 777</p></div>
         </div>
       </div>
       <a href="#contact" class="btn-gold">Rezervovat stůl</a>
@@ -813,62 +948,62 @@
 <section id="menu">
   <div class="menu-header" data-r>
     <div class="section-label">Nabídka</div>
-    <h2 class="section-title">Co hosté <em>doporučují</em></h2>
-    <p class="section-desc">Výběr z naší kuchyně – čerstvé suroviny, poctivá příprava, nezapomenutelná chuť.</p>
+    <h2 class="section-title">Co u nás <em>ochutnáte</em></h2>
+    <p class="section-desc">Autentická thajsko-japonská kuchyně. Vybrali jsme pro vás to nejoblíbenější – plný lístek najdete v restauraci nebo si ho necháte poradit od našeho MenuBota.</p>
   </div>
   <div class="menu-grid">
     <div class="menu-item" data-r>
       <div class="menu-item-num">01</div>
-      <h3>Polévka dne</h3>
-      <p>Čerstvá domácí polévka připravená každý den z sezónní zeleniny a bylinek.</p>
+      <h3>Gold Sushi 24K</h3>
+      <p>Nigiri s čerstvým lososem zdobené pravým 24karátovým zlatem. Naše podpisová specialita.</p>
       <div class="menu-item-footer">
-        <span class="menu-price">89 Kč</span>
-        <span class="menu-tag">Denní nabídka</span>
+        <span class="menu-price">390 Kč</span>
+        <span class="menu-tag">Signature</span>
       </div>
     </div>
     <div class="menu-item" data-r>
       <div class="menu-item-num">02</div>
-      <h3>Svíčková na smetaně</h3>
-      <p>Hovězí svíčková se smetanovou omáčkou, houskovým knedlíkem a brusinkami.</p>
+      <h3>Dragon Roll</h3>
+      <p>Maki s krevetou v tempuře, avokádem a okurkou, navrchu plátky lososa a unagi omáčka.</p>
       <div class="menu-item-footer">
-        <span class="menu-price">289 Kč</span>
-        <span class="menu-tag">Tip šéfkuchaře</span>
-      </div>
-    </div>
-    <div class="menu-item" data-r>
-      <div class="menu-item-num">03</div>
-      <h3>Grilovaný losos</h3>
-      <p>Norský losos s citronovým máslem, pečenou zeleninou a bylinkovým olejem.</p>
-      <div class="menu-item-footer">
-        <span class="menu-price">329 Kč</span>
+        <span class="menu-price">285 Kč</span>
         <span class="menu-tag">Oblíbené</span>
       </div>
     </div>
     <div class="menu-item" data-r>
-      <div class="menu-item-num">04</div>
-      <h3>Pečená kachna</h3>
-      <p>Půlka kachny se zelím, knedlíky a domácí tmavou omáčkou.</p>
+      <div class="menu-item-num">03</div>
+      <h3>Sashimi Mix</h3>
+      <p>Výběr čerstvě krájené ryby – losos, tuňák a bílá ryba. Podáváme s wasabi a nakládaným zázvorem.</p>
       <div class="menu-item-footer">
-        <span class="menu-price">349 Kč</span>
-        <span class="menu-tag">Specialita</span>
+        <span class="menu-price">319 Kč</span>
+        <span class="menu-tag">Chef's pick</span>
+      </div>
+    </div>
+    <div class="menu-item" data-r>
+      <div class="menu-item-num">04</div>
+      <h3>Tom Yum Goong</h3>
+      <p>Pikantní thajská polévka s krevetami, citrónovou trávou, galangou a kafírovými listy.</p>
+      <div class="menu-item-footer">
+        <span class="menu-price">179 Kč</span>
+        <span class="menu-tag">Thajská</span>
       </div>
     </div>
     <div class="menu-item" data-r>
       <div class="menu-item-num">05</div>
-      <h3>Hovězí burger</h3>
-      <p>Šťavnatý burger z českého hovězího s chedarem, karamelizovanou cibulí a hranolkami.</p>
+      <h3>Pad Thai s kuřecím</h3>
+      <p>Rýžové nudle restované s kuřecím masem, arašídy, klíčky a limetkou. Klasika thajské kuchyně.</p>
       <div class="menu-item-footer">
-        <span class="menu-price">249 Kč</span>
+        <span class="menu-price">219 Kč</span>
         <span class="menu-tag">Bestseller</span>
       </div>
     </div>
     <div class="menu-item" data-r>
       <div class="menu-item-num">06</div>
-      <h3>Tiramisu</h3>
-      <p>Klasický italský dezert s espressem, mascarpone a kakaem – recept šéfkuchaře.</p>
+      <h3>Krevety v tempuře</h3>
+      <p>Křupavé krevety v lehkém tempurovém těstíčku se sladko-kyselou omáčkou. Perfektní předkrm.</p>
       <div class="menu-item-footer">
-        <span class="menu-price">99 Kč</span>
-        <span class="menu-tag">Dezert</span>
+        <span class="menu-price">195 Kč</span>
+        <span class="menu-tag">Předkrm</span>
       </div>
     </div>
   </div>
@@ -877,8 +1012,8 @@
 <!-- GALLERY MARQUEE -->
 <section id="gallery">
   <div class="gallery-header" data-r>
-    <div class="section-label" style="color:var(--gold);justify-content:center;">Atmosféra</div>
-    <h2 class="section-title">Naše <em style="color:var(--gold2)">místo</em></h2>
+    <div class="section-label" style="color:var(--gold);justify-content:center;">Galerie</div>
+    <h2 class="section-title">Pohled <em style="color:var(--gold2)">do talířů</em></h2>
   </div>
   <div class="marquee-wrap">
     <div class="marquee-row" id="row1"></div>
@@ -896,23 +1031,23 @@
     <div class="test-track" id="test-track">
       <div class="test-slide">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"Nejlepší restaurace v Čelákovice. Přátelský personál, nádherné prostředí a jídlo bylo naprosto dokonalé. Určitě se vrátíme!"</p>
-        <div class="test-author">Petra K. · Čelákovice</div>
+        <p class="test-quote">"Losos naprosto dokonalý a bylo vidět, že i čerstvý! Dokonce i nakládaný zázvor byl tady top!"</p>
+        <div class="test-author">Kataka Janíková · Google recenze</div>
       </div>
       <div class="test-slide">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"Skvělé místo na romantickou večeři. Atmosféra je kouzelná, jídlo výborné a obsluha velice pozorná. Rozhodně doporučuji!"</p>
-        <div class="test-author">Martin J. · Brno</div>
+        <p class="test-quote">"Nejlepší sushi co jsem kdy měla. Krásný prostředí, milá obsluha."</p>
+        <div class="test-author">Pavla Malá · Google recenze</div>
       </div>
       <div class="test-slide">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"Poctivá kuchyně, velkorysé porce a příjemná obsluha. Chodím pravidelně na oběd a vždy jsem spokojený. Výborný poměr cena–kvalita."</p>
-        <div class="test-author">Jana M. · Čelákovice</div>
+        <p class="test-quote">"Skvělé jídlo i obsluha, oceňuji velké pískoviště pro děti, určitě stojí za to se vrátit."</p>
+        <div class="test-author">Ivuška Navrátilová · Google recenze</div>
       </div>
       <div class="test-slide">
         <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"Uspořádali jsme tady firemní večírek pro 20 lidí. Obsluha byla perfektní, jídlo vynikající a atmosféra přesně taková, jakou jsme si přáli."</p>
-        <div class="test-author">Tomáš B. · Čelákovice</div>
+        <p class="test-quote">"Dnes jsme zkusili poprvé a musím říci že to nebylo vůbec špatné! Krevety v tempuře super."</p>
+        <div class="test-author">Andrea Poděbradská · Google recenze</div>
       </div>
     </div>
   </div>
@@ -929,31 +1064,31 @@
   <div class="special-bg"></div>
   <div class="special-inner">
     <div class="special-content" data-r="left">
-      <div class="section-label" style="color:var(--gold)">Speciální nabídky</div>
-      <h2 class="section-title" style="color:var(--white)">Akce &amp;<br><em>Události</em></h2>
-      <p class="section-desc" style="color:rgba(255,255,255,.6);margin-bottom:2rem;">Přijďte na naše pravidelné akce nebo si rezervujte celý prostor pro soukromou oslavu.</p>
-      <a href="#contact" class="btn-gold">Více informací</a>
+      <div class="section-label" style="color:var(--gold)">Co nás odlišuje</div>
+      <h2 class="section-title" style="color:var(--white)">Víc než<br><em>jen restaurace</em></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,.6);margin-bottom:2rem;">Přijďte si užít autentickou kuchyni, nebo si nechte sushi rozvézt domů. Myslíme i na rodiny s dětmi a firemní akce.</p>
+      <a href="#contact" class="btn-gold">Rezervovat stůl</a>
     </div>
     <div class="special-cards" data-r="right">
       <div class="special-card">
-        <div class="special-card-icon">🍷</div>
+        <div class="special-card-icon">✨</div>
         <div>
-          <h4>Vinné středy</h4>
-          <p>Každou středu degustace vín od lokálních vinařů. Vstup zdarma s rezervací.</p>
+          <h4>24K Gold Sushi</h4>
+          <p>Přijďte k nám vyzkoušet zlato. A to doslova! Naše podpisová specialita se pravým 24karátovým zlatem.</p>
         </div>
       </div>
       <div class="special-card">
-        <div class="special-card-icon">🎵</div>
+        <div class="special-card-icon">🛵</div>
         <div>
-          <h4>Živá hudba v pátek</h4>
-          <p>Každý pátek od 19:00 jazz a blues v příjemné atmosféře.</p>
+          <h4>Rozvoz Čelákovice</h4>
+          <p>Objednejte telefonem na 777 725 777 a my vám sushi přivezeme domů nebo do kanceláře.</p>
         </div>
       </div>
       <div class="special-card">
-        <div class="special-card-icon">🎂</div>
+        <div class="special-card-icon">🌳</div>
         <div>
-          <h4>Soukromé oslavy</h4>
-          <p>Narozeniny, výročí, firemní večírky – postaráme se o vše.</p>
+          <h4>Rodinné prostředí</h4>
+          <p>Venkovní posezení, pískoviště pro děti a parkování zdarma. Nekuřácká restaurace.</p>
         </div>
       </div>
     </div>
@@ -971,21 +1106,28 @@
           <div class="contact-icon">📍</div>
           <div>
             <div class="contact-label">Adresa</div>
-            <div class="contact-val">V Prokopě 1551, Čelákovice</div>
+            <div class="contact-val">V Prokopě 1551, Čelákovice 250 88</div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div>
-            <div class="contact-label">Telefon</div>
+            <div class="contact-label">Telefon / rozvoz</div>
             <div class="contact-val">+420 777 725 777</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">info@yuzu-sushi.cz</div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🕐</div>
           <div>
             <div class="contact-label">Otevírací doba</div>
-            <div class="contact-val">Po–Pá: 11:00–22:00<br>So–Ne: 12:00–23:00</div>
+            <div class="contact-val">Po–Ne: 11:00–21:00</div>
           </div>
         </div>
       </div>
@@ -1022,7 +1164,7 @@
         </div>
         <div class="form-group">
           <label>Zpráva</label>
-          <textarea placeholder="Zvláštní požadavky, alergie, přání..."></textarea>
+          <textarea placeholder="Zvláštní požadavky, alergeny, předobjednávka sushi, přání..."></textarea>
         </div>
         <button type="submit" class="form-submit">Odeslat rezervaci</button>
       </form>
@@ -1030,7 +1172,7 @@
   </div>
 
       <div style="text-align:center;margin:20px 0;">
-        <a href="mailto:matyas.vrbaa@gmail.com?subject=Mám zájem o web – Yuzu sushi restaurant" style="display:inline-block;background:#ff6b35;color:#fff;border-radius:8px;padding:15px 40px;font-size:18px;text-decoration:none;font-weight:bold;margin:20px 0;">Chci takový web</a>
+        <a href="mailto:matyas.vrbaa@gmail.com?subject=Yuzu Sushi – chci tento web" style="display:inline-block;background:#f5c518;color:#0a0a0a;border-radius:8px;padding:15px 40px;font-size:18px;text-decoration:none;font-weight:bold;margin:20px 0;">Chci takový web</a>
       </div>
 </section>
 
@@ -1038,12 +1180,12 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="footer-logo">Yuzu sushi restaurant<span>.</span></a>
-      <p class="footer-desc">Poctivá kuchyně s důrazem na čerstvé suroviny a přátelskou atmosféru.</p>
+      <a href="#" class="footer-logo">Yuzu Sushi<span>.</span></a>
+      <p class="footer-desc">Autentická thajsko-japonská kuchyně z čerstvých surovin. Sushi, sashimi, Pad Thai a 24K Gold Sushi v Čelákovicích.</p>
       <div class="social-links">
-        <a href="#" class="social-link" aria-label="Facebook">f</a>
-        <a href="#" class="social-link" aria-label="Instagram">ig</a>
-        <a href="#" class="social-link" aria-label="TripAdvisor">ta</a>
+        <a href="https://www.facebook.com/yuzusushi" target="_blank" class="social-link" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/yuzu_sushi/" target="_blank" class="social-link" aria-label="Instagram">ig</a>
+        <a href="https://www.google.com/maps/place/Yuzu+Sushi" target="_blank" class="social-link" aria-label="Google">G</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1059,29 +1201,58 @@
     <div class="footer-col">
       <h4>Otevírací doba</h4>
       <ul class="footer-hours">
-        <li><span>Po–Čt</span><span>11:00–22:00</span></li>
-        <li><span>Pátek</span><span>11:00–23:00</span></li>
-        <li><span>Sobota</span><span>12:00–23:00</span></li>
-        <li><span>Neděle</span><span>12:00–21:00</span></li>
+        <li><span>Pondělí</span><span>11:00–21:00</span></li>
+        <li><span>Úterý–Čt</span><span>11:00–21:00</span></li>
+        <li><span>Pátek–So</span><span>11:00–21:00</span></li>
+        <li><span>Neděle</span><span>11:00–21:00</span></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="#">V Prokopě 1551</a></li>
-        <li><a href="tel:+420 777 725 777">+420 777 725 777</a></li>
-        <li><a href="#">info@yuzu-sushi.cz</a></li>
+        <li><a href="https://maps.google.com/?q=V+Prokop%C4%9B+1551+%C4%8Cel%C3%A1kovice" target="_blank">V Prokopě 1551, Čelákovice</a></li>
+        <li><a href="tel:+420777725777">+420 777 725 777</a></li>
+        <li><a href="mailto:info@yuzu-sushi.cz">info@yuzu-sushi.cz</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Yuzu sushi restaurant · Vytvořeno s ❤️ od <a href="https://strankyprovas.cz">StránkyProVás</a></p>
+    <p class="footer-copy">© 2026 Yuzu Sushi Restaurant · Od nás chutná s.r.o. · Web od <a href="https://strankyprovas.cz">StránkyProVás</a></p>
     <p class="footer-copy">Všechna práva vyhrazena</p>
   </div>
 </footer>
 
 <!-- BACK TO TOP -->
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- MENUBOT -->
+<button id="menubot-fab" aria-label="Otevřít MenuBot">
+  🍣
+  <span class="mbot-badge">AI</span>
+</button>
+<div id="menubot-panel" role="dialog" aria-label="MenuBot">
+  <div class="mbot-head">
+    <div class="mbot-head-avatar">🍣</div>
+    <div>
+      <div class="mbot-head-title">MenuBot</div>
+      <div class="mbot-head-sub">Zeptejte se na menu, alergeny, doporučení</div>
+    </div>
+    <button class="mbot-close" aria-label="Zavřít">✕</button>
+  </div>
+  <div class="mbot-log" id="mbot-log"></div>
+  <div class="mbot-chips" id="mbot-chips">
+    <button class="mbot-chip" data-q="Co doporučíte?">Co doporučíte?</button>
+    <button class="mbot-chip" data-q="Co je Gold Sushi 24K?">Gold Sushi 24K</button>
+    <button class="mbot-chip" data-q="Máte veganské jídlo?">Veganské jídlo</button>
+    <button class="mbot-chip" data-q="Alergeny?">Alergeny</button>
+    <button class="mbot-chip" data-q="Rozvážíte?">Rozvoz</button>
+    <button class="mbot-chip" data-q="Otevírací doba">Otevírací doba</button>
+  </div>
+  <form class="mbot-input-row" id="mbot-form" onsubmit="return false;">
+    <input type="text" id="mbot-input" placeholder="Napište dotaz…" autocomplete="off">
+    <button class="mbot-send" type="submit">Odeslat</button>
+  </form>
+</div>
 
 <script>
 // ── SCROLL PROGRESS & NAVBAR ──────────────────────────
@@ -1141,7 +1312,7 @@ const cntObs = new IntersectionObserver(entries => {
 document.querySelectorAll('[data-count]').forEach(el => cntObs.observe(el));
 
 // ── GALLERY MARQUEE ───────────────────────────────────
-const photos = ['../stock_photos/photo_1.jpg','../stock_photos/photo_2.jpg','../stock_photos/photo_3.jpg','../stock_photos/photo_4.jpg','../stock_photos/photo_5.jpg'];
+const photos = ['photos/photo_1.jpg','photos/photo_2.jpg','photos/photo_3.jpg','photos/photo_4.jpg','photos/photo_5.jpg'];
 const rows = [document.getElementById('row1'), document.getElementById('row2')];
 if(photos.length > 0){
   rows.forEach(row => {
@@ -1168,6 +1339,93 @@ function goTo(n){
 }
 dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
 setInterval(() => goTo((cur + 1) % slides.length), 5000);
+
+// ── MENUBOT ───────────────────────────────────────────
+const mbotFab   = document.getElementById('menubot-fab');
+const mbotPanel = document.getElementById('menubot-panel');
+const mbotLog   = document.getElementById('mbot-log');
+const mbotInput = document.getElementById('mbot-input');
+const mbotForm  = document.getElementById('mbot-form');
+const mbotClose = document.querySelector('.mbot-close');
+const mbotChips = document.getElementById('mbot-chips');
+
+const MBOT_KB = [
+  { k: ['doporuč','tip','nejlep','co si dát','oblíben','co mi dop'],
+    a: '<strong>Nejoblíbenější u nás:</strong><br>🥇 Gold Sushi 24K (390 Kč) – naše podpisová specialita<br>🐉 Dragon Roll (285 Kč) – losos & kreveta tempura<br>🌶 Tom Yum Goong (179 Kč) – pikantní thajská klasika<br>🥜 Pad Thai s kuřecím (219 Kč)<br><br>Chcete vědět víc o některém jídle?' },
+  { k: ['gold','zlat','24','24k','zlato'],
+    a: '<strong>Gold Sushi 24K</strong> – 390 Kč<br>Nigiri s čerstvým lososem zdobené pravým 24karátovým potravinářským zlatem. Jedinečná specialita, která z návštěvy udělá zážitek. Ideální jako dárek nebo na oslavu.' },
+  { k: ['vegan','vegetari','maso nejím','bez masa','rostlin'],
+    a: '<strong>Bez masa u nás vyberete:</strong><br>🥒 Avocado Maki & Kappa Maki (okurka)<br>🥬 Yasai Roll – smažená zelenina<br>🍜 Pad Thai zeleninový na přání<br>🌶 Tom Kha zeleninová (bez krevet)<br><br>Upřesnění veganských úprav prosím při rezervaci.' },
+  { k: ['alerg','lepek','gluten','oříšk','ořech','arašíd','laktó','sója','soja'],
+    a: '<strong>Alergeny:</strong> sójová omáčka (sója/lepek), Pad Thai obsahuje arašídy, tempura obsahuje lepek. Bezlepkové sushi (rýže + ryba) je možné – řekněte obsluze při objednávce nebo do poznámky rezervace. Kompletní přehled alergenů v restauraci nebo na vyžádání.' },
+  { k: ['rozvoz','rozváží','donáš','doná','rozvezete','dovezete','domů'],
+    a: '<strong>Rozvoz po Čelákovicích:</strong> volejte 📞 <a href="tel:+420777725777">+420 777 725 777</a>. Sushi balíme tak, aby vydrželo cestu čerstvé. Po–Ne 11:00–21:00.' },
+  { k: ['otvíra','otevír','otvír','do kolika','hodin','otevřeno','open'],
+    a: '<strong>Otevírací doba:</strong> každý den 11:00–21:00 (Po–Ne). Nejlépe si rezervujte stůl předem – kapacita bývá večer plná.' },
+  { k: ['adresa','kde jste','kde se nachází','čelákov','celakov','mapa'],
+    a: '📍 <strong>V Prokopě 1551, Čelákovice 250 88</strong><br><a href="https://maps.google.com/?q=V+Prokop%C4%9B+1551+%C4%8Cel%C3%A1kovice" target="_blank">Otevřít v Google mapách</a><br>Parkování u restaurace zdarma.' },
+  { k: ['rezerv','stůl','objedn','booking'],
+    a: 'Rezervace přijímáme telefonicky 📞 <a href="tel:+420777725777">+420 777 725 777</a> nebo rezervačním formulářem v sekci Kontakt. Pro větší skupiny (8+) doporučuji volat.' },
+  { k: ['cena','kolik stojí','levné','drahé','price'],
+    a: 'Většina jídel se pohybuje od 170 do 320 Kč. Signature Gold Sushi 24K je za 390 Kč. Polední nabídka a sety bývají výhodnější – zeptejte se obsluhy na aktuální nabídku.' },
+  { k: ['děti','dítě','pískov','rodin'],
+    a: 'Jsme rodinná restaurace – máme venkovní pískoviště pro děti, nekuřácké prostředí a parkování zdarma. Dětské porce připravíme na přání. 🧒' },
+  { k: ['šéfkuchař','kuchař','filip','cibuľ','cibul'],
+    a: 'Restauraci vede šéfkuchař <strong>Filip Cibuľa</strong> s týmem specialistů, kteří mají zkušenosti z Kobe Restaurant, Asian Temple, Sushi Time a Sakura Sushi. Vaříme 100 % autenticky.' },
+  { k: ['děkuj','díky','thanks','super','skvěl'],
+    a: 'Děkujeme! Těšíme se na vás v Yuzu Sushi 🍣' },
+  { k: ['ahoj','zdravím','dobrý den','čau','hello','hi'],
+    a: 'Zdravím! Jsem MenuBot 🍣 – poradím s výběrem jídla, alergeny, rozvozem i rezervací. Na co se chcete zeptat?' }
+];
+
+function mbotReply(q) {
+  const t = q.toLowerCase();
+  const hit = MBOT_KB.find(e => e.k.some(k => t.includes(k)));
+  if (hit) return hit.a;
+  return 'Na to zatím neumím odpovědět – napište prosím přímo na <a href="tel:+420777725777">+420 777 725 777</a> nebo <a href="mailto:info@yuzu-sushi.cz">info@yuzu-sushi.cz</a>. V produkci bude MenuBot napojen na AI a kompletní jídelní lístek. 🙂';
+}
+
+function mbotAdd(text, who) {
+  const el = document.createElement('div');
+  el.className = 'mbot-msg ' + who;
+  el.innerHTML = text;
+  mbotLog.appendChild(el);
+  mbotLog.scrollTop = mbotLog.scrollHeight;
+  return el;
+}
+function mbotTyping() {
+  const el = document.createElement('div');
+  el.className = 'mbot-msg bot';
+  el.innerHTML = '<div class="mbot-typing"><span></span><span></span><span></span></div>';
+  mbotLog.appendChild(el);
+  mbotLog.scrollTop = mbotLog.scrollHeight;
+  return el;
+}
+function mbotAsk(q) {
+  mbotAdd(q, 'user');
+  mbotInput.value = '';
+  const t = mbotTyping();
+  setTimeout(() => {
+    t.innerHTML = mbotReply(q);
+    mbotLog.scrollTop = mbotLog.scrollHeight;
+  }, 650 + Math.random()*450);
+}
+
+mbotFab.addEventListener('click', () => {
+  const open = mbotPanel.classList.toggle('open');
+  if (open && !mbotLog.hasChildNodes()) {
+    mbotAdd('Ahoj 👋 Jsem <strong>MenuBot</strong>. Poradím s výběrem jídla, alergeny, rozvozem i rezervací. Klepněte na tip dole, nebo napište dotaz.', 'bot');
+  }
+});
+mbotClose.addEventListener('click', () => mbotPanel.classList.remove('open'));
+mbotForm.addEventListener('submit', () => {
+  const q = mbotInput.value.trim();
+  if (q) mbotAsk(q);
+});
+mbotChips.addEventListener('click', e => {
+  const b = e.target.closest('.mbot-chip');
+  if (b) mbotAsk(b.dataset.q);
+});
 
 // ── MENU CARD TILT ────────────────────────────────────
 document.querySelectorAll('.menu-item').forEach(card => {

@@ -42,25 +42,64 @@ body::before{
 .eyebrow::before{content:'';width:28px;height:1px;background:var(--y)}
 h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:.02em}
 
-/* NAV — identický top bar */
+/* NAV — full nav identický s hlavní stránkou */
 #nav{
   position:sticky;top:0;z-index:900;
-  padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
   background:rgba(10,10,10,.94);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
-.logo{display:flex;align-items:center;gap:.7rem;color:#fff;font-family:'Montserrat',sans-serif}
+.logo{display:flex;align-items:center;gap:.7rem;color:#fff;font-family:'Montserrat',sans-serif;flex-shrink:0}
 .logo__mark{width:40px;height:40px;border-radius:50%;background:var(--y);position:relative;box-shadow:0 0 0 2px #000, 0 0 0 3px var(--y)}
 .logo__mark::before,.logo__mark::after{content:'';position:absolute;left:-5px;top:50%;width:48px;height:2px;background:#fff;transform:translateY(-50%) rotate(-28deg)}
 .logo__mark::after{transform:translateY(-50%) rotate(28deg)}
 .logo__text{line-height:.95;letter-spacing:.12em;font-size:.7rem;font-weight:700}
 .logo__text b{color:var(--y);font-size:.9rem;letter-spacing:.18em;display:block}
-.nav-back{
-  padding:.6rem 1.2rem;border:1px solid var(--line-2);color:#fff;
-  font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;
-  letter-spacing:.18em;text-transform:uppercase;transition:all .25s;
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.75);position:relative;padding:.4rem 0;
+  transition:color .25s;
 }
-.nav-back:hover{border-color:var(--y);color:var(--y)}
+.nav-links a:hover{color:var(--y)}
+.nav-links a.active{color:var(--y)}
+.nav-links a::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--y);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{
+  padding:.65rem 1.2rem;background:var(--y);color:#000;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:.68rem;
+  letter-spacing:.18em;text-transform:uppercase;transition:all .25s;flex-shrink:0;
+}
+.nav-cta:hover{background:#fff;transform:translateY(-1px)}
+.hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;width:28px;background:transparent;border:none;padding:4px}
+.hamb span{display:block;width:100%;height:2px;background:#fff;transition:.3s}
+
+/* Mobile drawer */
+#drawer{
+  display:none;position:fixed;inset:0;z-index:950;
+  background:rgba(10,10,10,.98);backdrop-filter:blur(10px);
+  flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
+}
+#drawer.open{display:flex}
+#drawer a{
+  font-family:'Montserrat',sans-serif;font-weight:800;
+  font-size:1.6rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+}
+#drawer a:hover{color:var(--y)}
+#drawer .close{
+  position:absolute;top:1.4rem;right:1.4rem;background:transparent;border:none;
+  color:#fff;font-size:1.8rem;cursor:pointer;
+}
+
+/* Scroll progress + back-to-top */
+#progress{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--y),var(--y-light));transform-origin:left;transform:scaleX(0);z-index:950;transition:transform .08s linear}
+#to-top{position:fixed;bottom:1.6rem;right:1.6rem;z-index:500;width:44px;height:44px;background:var(--y);color:#000;border:none;cursor:pointer;font-size:1.15rem;font-weight:700;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s var(--ease);box-shadow:0 6px 20px rgba(245,197,24,.3)}
+#to-top.show{opacity:1;visibility:visible}
+#to-top:hover{background:var(--y-light);transform:translateY(-3px)}
 
 /* HEADER */
 header.page{
@@ -143,6 +182,11 @@ footer p{font-size:.75rem;color:var(--muted-2)}
 footer a{color:var(--y)}
 
 /* RESPONSIVE */
+@media (max-width:1100px){
+  .nav-links{display:none}
+  .hamb{display:flex}
+  .nav-cta{padding:.55rem 1rem;font-size:.63rem}
+}
 @media (max-width:900px){
   .wrap{grid-template-columns:1fr;padding:2.5rem 5%}
   aside.anchors{position:static;max-height:none;padding:0 0 2rem}
@@ -151,9 +195,34 @@ footer a{color:var(--y)}
   .items{grid-template-columns:1fr}
   .it{border-right:none!important}
 }
+@media (max-width:620px){
+  #nav{padding:.8rem 5%}
+  .logo__text{font-size:.62rem}
+  .logo__text b{font-size:.8rem}
+  .nav-cta{display:none}
+  header.page{padding:3rem 5% 2rem}
+  .cat__head{flex-wrap:wrap;gap:.5rem;align-items:flex-start}
+  .cat__icon{font-size:1.4rem}
+  .download-row{flex-direction:column;align-items:stretch}
+  .download-row .btn{justify-content:center}
+  .it{padding:1.2rem 1.3rem}
+  .it__row h3{font-size:.82rem}
+  .cta-band{padding:2.5rem 1.2rem}
+  .cta-band h3{font-size:1.4rem}
+}
+@media (max-width:420px){
+  #nav{gap:.4rem}
+  .logo__mark{width:34px;height:34px}
+  .logo__mark::before,.logo__mark::after{width:42px}
+  .hamb{width:24px}
+  header.page h1{font-size:2rem}
+}
 </style>
 </head>
 <body>
+
+<!-- SCROLL PROGRESS -->
+<div id="progress"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -161,8 +230,34 @@ footer a{color:var(--y)}
     <span class="logo__mark"></span>
     <span class="logo__text">YUZU <b>SUSHI</b></span>
   </a>
-  <a href="../" class="nav-back">← Zpět na web</a>
+  <ul class="nav-links">
+    <li><a href="../#about">O nás</a></li>
+    <li><a href="./" class="active">Menu</a></li>
+    <li><a href="../#gold">24K Gold</a></li>
+    <li><a href="../#gifts">Poukazy</a></li>
+    <li><a href="../#delivery">Rozvoz</a></li>
+    <li><a href="../recenze/">Recenze</a></li>
+  </ul>
+  <a href="../#contact" class="nav-cta">Rezervovat</a>
+  <button class="hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div id="drawer">
+  <button class="close" id="drawer-close" aria-label="Zavřít">✕</button>
+  <a href="../">Domů</a>
+  <a href="../#about">O nás</a>
+  <a href="./">Menu</a>
+  <a href="../yuzu-menu.pdf" download>PDF ke stažení</a>
+  <a href="../#gold">24K Gold</a>
+  <a href="../#gifts">Dárkové poukazy</a>
+  <a href="../#delivery">Rozvoz</a>
+  <a href="../recenze/">Recenze</a>
+  <a href="../#contact">Rezervace</a>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="to-top" aria-label="Nahoru">↑</button>
 
 <!-- HEADER -->
 <header class="page">
@@ -462,6 +557,23 @@ footer a{color:var(--y)}
 </footer>
 
 <script>
+// progress + back-to-top
+const progress=document.getElementById('progress');
+const toTop=document.getElementById('to-top');
+addEventListener('scroll',()=>{
+  const s=scrollY;const h=document.documentElement.scrollHeight-innerHeight;
+  progress.style.transform=`scaleX(${s/h})`;
+  toTop.classList.toggle('show',s>500);
+},{passive:true});
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+// mobile drawer
+const hamb=document.getElementById('hamb');
+const drawer=document.getElementById('drawer');
+hamb.addEventListener('click',()=>drawer.classList.add('open'));
+document.getElementById('drawer-close').addEventListener('click',()=>drawer.classList.remove('open'));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+
 // active anchor highlight
 const anchors=document.querySelectorAll('aside.anchors a');
 const sections=document.querySelectorAll('.cat');

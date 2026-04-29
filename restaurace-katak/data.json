@@ -1,0 +1,143 @@
+{
+  "openingHours": {
+    "today": "Po–Čt 11:00–21:00 · Pá–So 11:00–24:00 · Ne 16:00–21:00",
+    "rows": [
+      { "label": "Pondělí–Čtvrtek", "hours": "11:00–21:00" },
+      { "label": "Pátek–Sobota", "hours": "11:00–24:00" },
+      { "label": "Neděle", "hours": "16:00–21:00" }
+    ],
+    "contactDisplay": "Po–Čt: 11:00–21:00\nPá–So: 11:00–24:00\nNe: 16:00–21:00"
+  },
+  "weeklyMenu": {
+    "weekLabel": "Týdenní menu 28.4. – 4.5.2026",
+    "intro": "Polední menu Po–Pá 11:00–14:00. K hlavnímu jídlu polévka.",
+    "price": "159 Kč",
+    "days": [
+      {
+        "day": "Pondělí",
+        "date": "28.4.",
+        "soup": "Hovězí vývar s nudlemi",
+        "mains": [
+          "Svíčková na smetaně, houskový knedlík",
+          "Smažený sýr, vařené brambory, tatarka",
+          "Halloumi burger s domácími hranolky"
+        ]
+      },
+      {
+        "day": "Úterý",
+        "date": "29.4.",
+        "soup": "Frankfurtská polévka",
+        "mains": [
+          "Vepřové výpečky, dušené zelí, bramborový knedlík",
+          "Kuřecí steak s grilovanou zeleninou a opékanými brambory",
+          "Tortilla sýrová s bylinkovým dipem a hranolkami"
+        ]
+      },
+      {
+        "day": "Středa",
+        "date": "30.4.",
+        "soup": "Krémová brokolicová s krutony",
+        "mains": [
+          "Hovězí guláš, houskový knedlík",
+          "Smažený kuřecí řízek, opékané brambory",
+          "Caesar salát s grilovaným kuřecím masem"
+        ]
+      },
+      {
+        "day": "Čtvrtek",
+        "date": "1.5.",
+        "soup": "Kulajda s vejcem a koprem",
+        "mains": [
+          "Pečené kuřecí stehno, dušená rýže",
+          "Bramborák s masovou směsí",
+          "Tortilla s grilovaným kuřecím a hranolkami"
+        ]
+      },
+      {
+        "day": "Pátek",
+        "date": "2.5.",
+        "soup": "Česneková s krutony a sýrem",
+        "mains": [
+          "Vepřová panenka sous-vide, opékané brambory, pepřová omáčka",
+          "Smažené miniřízečky, hranolky, tatarka",
+          "Trhaný listový salát s grilovaným hermelínem"
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "name": "Rib eye steak sous-vide",
+      "description": "S opékanými brambory se slaninou a cibulí a pepřovou omáčkou.",
+      "price": "350 Kč",
+      "tag": "Tip šéfkuchaře"
+    },
+    {
+      "name": "Vepřové koleno na černém pivě",
+      "description": "Hořčice, křen, nakládaná zelenina a chléb – pravá česká klasika.",
+      "price": "360 Kč",
+      "tag": "Specialita"
+    },
+    {
+      "name": "Hovězí svíčková na smetaně",
+      "description": "S brusinkovým terčem a domácím houskovým knedlíkem.",
+      "price": "219 Kč",
+      "tag": "Tradice"
+    },
+    {
+      "name": "BBQ bacon burger",
+      "description": "Šťavnatý burger se slaninou a domácími hranolky.",
+      "price": "229 Kč",
+      "tag": "Bestseller"
+    },
+    {
+      "name": "Halloumi burger",
+      "description": "Vegetariánská varianta s grilovaným halloumi a domácími hranolky.",
+      "price": "219 Kč",
+      "tag": "Vege"
+    },
+    {
+      "name": "Čokoládový fondánt",
+      "description": "S malinovou omáčkou, vanilkovou zmrzlinou a šlehačkou.",
+      "price": "140 Kč",
+      "tag": "Dezert"
+    }
+  ],
+  "events": [
+    {
+      "icon": "💍",
+      "title": "Svatby a oslavy v sále",
+      "description": "Velký sál s kompletním cateringem – jídlo, nápoje i dorty na přání. Kapacita až pro 100 hostů.",
+      "photo": ""
+    },
+    {
+      "icon": "🔥",
+      "title": "Letní grilovačky na zahrádce",
+      "description": "Pravidelné grilovačky na prostorné zahrádce spojené s živou hudbou a koncerty.",
+      "photo": ""
+    },
+    {
+      "icon": "🎉",
+      "title": "Plesy, koncerty a firemní akce",
+      "description": "Sál ideální pro plesy, firemní večírky i hudební vystoupení – domluvme termín.",
+      "photo": ""
+    }
+  ],
+  "gallery": [
+    "photos-real/katak-1.jpg",
+    "photos-real/katak-2.jpg",
+    "photos-real/katak-3.jpg",
+    "photos-real/katak-4.jpg",
+    "photos-real/katak-5.jpg",
+    "photos-real/katak-6.jpg",
+    "photos-real/katak-7.jpg",
+    "photos-real/katak-8.jpg",
+    "photos-real/katak-9.jpg",
+    "photos-real/katak-10.jpg",
+    "photos-real/katak-11.jpg",
+    "photos-real/katak-12.jpg",
+    "photos-real/katak-old-1.jpg",
+    "photos-real/katak-old-2.jpg",
+    "photos-real/katak-old-3.jpg"
+  ]
+}

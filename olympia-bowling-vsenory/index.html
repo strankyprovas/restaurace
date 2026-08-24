@@ -149,8 +149,19 @@ section{padding:96px 0}
   padding:9px 17px;border-radius:2px;font-size:.85rem;font-weight:700;cursor:pointer;
   transition:all .18s;font-family:var(--telo)}
 .gal-filtr button.on,.gal-filtr button:hover{background:var(--zlata);color:#17130c;border-color:var(--zlata)}
-.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.galerie figure{margin:0;overflow:hidden;border-radius:3px;cursor:pointer;position:relative;aspect-ratio:1}
+.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.galerie figure{margin:0;overflow:hidden;border-radius:3px;cursor:pointer;position:relative;aspect-ratio:4/3}
+/* každá pátá dlaždice přes dva sloupce — ať mřížka nevypadá jako tabulka */
+.galerie figure:nth-child(5n+1){grid-column:span 2;aspect-ratio:8/5}
+@media(max-width:560px){
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie figure:nth-child(5n+1){grid-column:span 2}
+}
+.gal-vic{display:flex;justify-content:center;margin-top:22px}
+.gal-vic button{background:transparent;border:1px solid var(--linka);color:var(--text);
+  padding:13px 28px;border-radius:2px;font-weight:700;font-size:.9rem;cursor:pointer;
+  letter-spacing:.03em;transition:all .2s;font-family:var(--telo)}
+.gal-vic button:hover{background:var(--zlata);color:#17130c;border-color:var(--zlata)}
 .galerie img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .galerie figure:hover img{transform:scale(1.07)}
 .galerie figure::after{content:"";position:absolute;inset:0;background:rgba(224,163,60,0);transition:background .3s}
@@ -478,7 +489,8 @@ footer p{color:var(--text-tlum);font-size:.92rem}
       <h2>Podívejte se k nám</h2>
     </div>
     <div class="gal-filtr" id="galFiltr"></div>
-    <div class="galerie" id="galerie"></div>
+    <div class="galerie" id="galMrizka"></div>
+    <div class="gal-vic"><button id="galVic" type="button">Zobrazit všechny fotky</button></div>
   </div>
 </section>
 
@@ -668,16 +680,35 @@ const GAL = {
   'Dorty':    ['cakes__1','cakes__3','cakes__6','cakes__12','cakes__15','cakes__18'],
   'Zahrádka': ['ext__1','ext__7','ext__8','ext__9','ext__10']
 };
-const filtr = document.getElementById('galFiltr'), mrizka = document.getElementById('galerie');
-let aktualni = [];
-function ukazGal(nazev) {
-  aktualni = nazev === 'Vše' ? Object.values(GAL).flat() : GAL[nazev];
-  mrizka.innerHTML = aktualni.map((s, i) => `
+const filtr = document.getElementById('galFiltr'),
+      mrizka = document.getElementById('galMrizka'),
+      tlacVic = document.getElementById('galVic');
+const NA_ZACATEK = 12;                 // ať sekce nezačíná stěnou ze 47 fotek
+let aktualni = [], vseVidet = false;
+
+function vykresliGal(nazev) {
+  const zobrazit = vseVidet ? aktualni : aktualni.slice(0, NA_ZACATEK);
+  mrizka.innerHTML = zobrazit.map((s, i) => `
     <figure data-i="${i}">
       <img src="img/galerie__${s}.jpg" alt="Olympia Bowling Všenory — ${nazev}" loading="lazy">
     </figure>`).join('');
+  const zbyva = aktualni.length - zobrazit.length;
+  tlacVic.parentElement.style.display = zbyva > 0 ? 'flex' : 'none';
+  tlacVic.textContent = `Zobrazit dalších ${zbyva} fotek`;
+}
+
+function ukazGal(nazev) {
+  aktualni = nazev === 'Vše' ? Object.values(GAL).flat() : GAL[nazev];
+  vseVidet = false;
+  vykresliGal(nazev);
   [...filtr.children].forEach(b => b.classList.toggle('on', b.textContent === nazev));
 }
+
+tlacVic.onclick = () => {
+  vseVidet = true;
+  const aktivni = [...filtr.children].find(b => b.classList.contains('on'));
+  vykresliGal(aktivni ? aktivni.textContent : 'Vše');
+};
 ['Vše', ...Object.keys(GAL)].forEach(n => {
   const b = document.createElement('button');
   b.textContent = n;

@@ -694,7 +694,7 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Jack and George<span>.</span></a>
+  <a href="#" class="nav-logo"><img src="photos/logo.png" alt="Jack &amp; George Restaurant" style="height:44px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="#about">O nás</a></li>
     <li><a href="#menu">Menu</a></li>
@@ -727,6 +727,7 @@
     <p class="hero-sub">Restaurace v srdci Písku, rozvoz obědů a catering kdekoliv po jižních Čechách — od svateb po firemní grilování.</p>
     <div class="hero-btns">
       <a href="#menu" class="btn-gold">Naše menu</a>
+      <a href="https://www.menicka.cz/8627-jack-and-george-restaurant-and-coffee-bar.html" target="_blank" rel="noopener" class="btn-ghost">Polední menu</a>
       <a href="#contact" class="btn-ghost">Rezervovat stůl</a>
     </div>
     <div class="hero-hours">
@@ -898,8 +899,8 @@
       <div class="special-card">
         <div class="special-card-icon">🚚</div>
         <div>
-          <h4>Rozvoz obědů a jídla</h4>
-          <p>Naše kuchyně až k vám domů nebo do firmy — po Písku a okolí.</p>
+          <h4>Rozvoz obědů — po Písku a okolí ZDARMA</h4>
+          <p>Menu vč. polévky: firemní stravování 149 Kč vč. obalu, seniorské 129 Kč do vlastních obalů. Po–So, platba i stravenkovou kartou či fakturou.</p>
         </div>
       </div>
       <div class="special-card">
@@ -914,6 +915,13 @@
         <div>
           <h4>Slavnostní tabule a dorty</h4>
           <p>Připravíme kompletní hostinu včetně dortů a sladkého rautu z vlastní cukrárny.</p>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-card-icon">🎄</div>
+        <div>
+          <h4>Vánoční cukroví na objednávku</h4>
+          <p>15 druhů domácího cukroví — 1 kg + domácí vánočka za 1 299 Kč. Přijímáme objednávky, vše přivezeme.</p>
         </div>
       </div>
     </div>
@@ -1001,13 +1009,9 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="footer-logo">Jack and George Restaurant and Coffee Bar<span>.</span></a>
+      <a href="#" class="footer-logo"><img src="photos/logo.png" alt="Jack &amp; George Restaurant" style="height:52px;width:auto;display:block;"></a>
       <p class="footer-desc">Restaurace, rozvoz obědů a catering po jižních Čechách. 20 let poctivé kuchyně.</p>
-      <div class="social-links">
-        <a href="#" class="social-link" aria-label="Facebook">f</a>
-        <a href="#" class="social-link" aria-label="Instagram">ig</a>
-        <a href="#" class="social-link" aria-label="TripAdvisor">ta</a>
-      </div>
+      <div class="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">ig</a></div>
     </div>
     <div class="footer-col">
       <h4>Navigace</h4>
@@ -1104,7 +1108,7 @@ const cntObs = new IntersectionObserver(entries => {
 document.querySelectorAll('[data-count]').forEach(el => cntObs.observe(el));
 
 // ── GALLERY MARQUEE ───────────────────────────────────
-const photos = ['photos/sal.jpg','photos/jidlo-1.jpg','photos/bar.jpg','photos/dezert.jpg','photos/tabule.jpg','photos/jidlo-2.jpg','photos/exterier.jpg','photos/dort.jpg','photos/jidlo-3.jpg','photos/catering-2.jpg','photos/livance.jpg','photos/jidlo-4.jpg'];
+const photos = ['photos/sal.jpg','photos/jidlo-1.jpg','photos/bar.jpg','photos/dezert.jpg','photos/tabule.jpg','photos/jidlo-2.jpg','photos/exterier.jpg','photos/dort.jpg','photos/jidlo-3.jpg','photos/catering-2.jpg','photos/stanek.jpg','photos/akce-vecer.jpg','photos/livance.jpg','photos/jidlo-4.jpg'];
 const rows = [document.getElementById('row1'), document.getElementById('row2')];
 if(photos.length > 0){
   rows.forEach(row => {

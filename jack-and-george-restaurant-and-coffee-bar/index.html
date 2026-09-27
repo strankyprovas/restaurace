@@ -698,6 +698,7 @@
   <ul class="nav-links">
     <li><a href="#about">O nás</a></li>
     <li><a href="#menu">Menu</a></li>
+    <li><a href="#poledni" id="nav-poledni" style="display:none;">Polední menu</a></li>
     <li><a href="#gallery">Galerie</a></li>
     <li><a href="#special">Akce</a></li>
     <li><a href="#contact">Kontakt</a></li>
@@ -871,6 +872,17 @@
     <a href="jidelni-listek.pdf" target="_blank" class="btn-gold">Kompletní jídelní lístek (PDF)</a>
     <a href="https://www.menicka.cz/8627-jack-and-george-restaurant-and-coffee-bar.html" target="_blank" rel="noopener" class="btn-ghost" style="margin-left:12px;">Aktuální polední menu</a>
   </div>
+</section>
+
+
+<!-- POLEDNI MENU (plni se z admin/data.json; kdyz je prazdne, sekce se skryje) -->
+<section id="poledni" style="display:none;background:var(--cream,#f5f2ed);padding:90px 6vw;">
+  <div class="menu-header" data-r>
+    <div class="section-label">Polední menu</div>
+    <h2 class="section-title">Tento <em>týden</em></h2>
+    <p class="section-desc" id="poledni-pozn"></p>
+  </div>
+  <div id="poledni-dny" style="max-width:900px;margin:0 auto;display:grid;gap:14px;"></div>
 </section>
 
 <!-- GALLERY MARQUEE -->
@@ -1143,6 +1155,21 @@ if (rezForm) rezForm.addEventListener('submit', e => {
   const body = `Dobrý den,%0D%0Amám zájem o rezervaci.%0D%0A%0D%0AJméno: ${encodeURIComponent(v('input[type=text]'))}%0D%0AE-mail: ${encodeURIComponent(v('input[type=email]'))}%0D%0ADatum: ${encodeURIComponent(v('input[type=date]'))}%0D%0AOsob: ${encodeURIComponent(v('select'))}%0D%0A%0D%0A${encodeURIComponent(v('textarea'))}`;
   location.href = `mailto:jackandgeorgerestaurant@seznam.cz?subject=${encodeURIComponent('Rezervace z webu')}&body=${body}`;
 });
+
+// ── POLEDNI MENU z admin/data.json ──
+fetch('admin/data.json?v=' + Date.now()).then(r => r.json()).then(d => {
+  const dny = (d.dny || []).filter(x => (x.polevka || '').trim() || (x.jidla || []).length);
+  if (!dny.length) return;
+  document.getElementById('poledni').style.display = '';
+  const nav = document.getElementById('nav-poledni'); if (nav) nav.parentElement ? nav.style.display = '' : null;
+  document.getElementById('poledni-pozn').textContent = d.poznamka || '';
+  document.getElementById('poledni-dny').innerHTML = dny.map(x => `
+    <div style="background:#fff;border:1px solid #e5ded2;border-radius:14px;padding:18px 22px;">
+      <div style="font-weight:700;color:var(--gold,#c19a5b);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin-bottom:8px;">${x.den}</div>
+      ${x.polevka ? `<div style="font-style:italic;color:#6a6156;margin-bottom:8px;">${x.polevka}</div>` : ''}
+      ${(x.jidla||[]).map(j => `<div style="display:flex;justify-content:space-between;gap:16px;padding:4px 0;"><span>${j.nazev}</span><span style="white-space:nowrap;font-weight:600;">${j.cena ? j.cena + ' Kč' : ''}</span></div>`).join('')}
+    </div>`).join('');
+}).catch(() => {});
 </script>
 </body>
 </html>

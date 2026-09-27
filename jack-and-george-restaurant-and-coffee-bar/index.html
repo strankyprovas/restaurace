@@ -698,7 +698,7 @@
   <ul class="nav-links">
     <li><a href="#about">O nás</a></li>
     <li><a href="#menu">Menu</a></li>
-    <li><a href="#poledni" id="nav-poledni" style="display:none;">Polední menu</a></li>
+    <li id="nav-poledni-li" style="display:none;"><a href="#poledni">Polední menu</a></li>
     <li><a href="#gallery">Galerie</a></li>
     <li><a href="#special">Akce</a></li>
     <li><a href="#contact">Kontakt</a></li>
@@ -868,9 +868,9 @@
       </div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:2.2rem;" data-r>
+  <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:2.2rem;" data-r>
     <a href="jidelni-listek.pdf" target="_blank" class="btn-gold">Kompletní jídelní lístek (PDF)</a>
-    <a href="https://www.menicka.cz/8627-jack-and-george-restaurant-and-coffee-bar.html" target="_blank" rel="noopener" class="btn-ghost" style="margin-left:12px;">Aktuální polední menu</a>
+    <a href="https://www.menicka.cz/8627-jack-and-george-restaurant-and-coffee-bar.html" target="_blank" rel="noopener" class="btn-ghost">Aktuální polední menu</a>
   </div>
 </section>
 
@@ -1161,7 +1161,7 @@ fetch('admin/data.json?v=' + Date.now()).then(r => r.json()).then(d => {
   const dny = (d.dny || []).filter(x => (x.polevka || '').trim() || (x.jidla || []).length);
   if (!dny.length) return;
   document.getElementById('poledni').style.display = '';
-  const nav = document.getElementById('nav-poledni'); if (nav) nav.parentElement ? nav.style.display = '' : null;
+  const navLi = document.getElementById('nav-poledni-li'); if (navLi) navLi.style.display = '';
   document.getElementById('poledni-pozn').textContent = d.poznamka || '';
   document.getElementById('poledni-dny').innerHTML = dny.map(x => `
     <div style="background:#fff;border:1px solid #e5ded2;border-radius:14px;padding:18px 22px;">
